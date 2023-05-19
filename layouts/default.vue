@@ -8,7 +8,7 @@
               ><img src="~/assets/images/logo.png" alt="تاپ نیوز" class="h-24 mt-1"
             /></a>
           </div>
-          
+
           <div class="relative mx-auto text-gray-600 lg:block hidden">
             <input
               class="border-2 border-gray-300 bg-white h-10 ml-2 pr-8 rounded-lg text-sm focus:outline-none text-sm focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-56 shadow-none rounded-full bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
@@ -17,38 +17,87 @@
               placeholder="جستجو..."
             />
             <button type="submit" class="absolute right-0 top-0 mt-3 mr-2">
-              <svg
-                class="text-gray-600 h-4 w-4 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                version="1.1"
-                id="Capa_1"
-                x="0px"
-                y="0px"
-                viewBox="0 0 56.966 56.966"
-                style="enable-background: new 0 0 56.966 56.966"
-                xml:space="preserve"
-                width="512px"
-                height="512px"
-              >
-                <path
-                  d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"
-                />
-              </svg>
+              <base-icon name="search" />
             </button>
           </div>
         </div>
 
         <div class="hidden md:block bg-primary shadow-md text-center">
           <div class="text-md font-bold text-white lg:flex-grow">
-          <router-link v-for="(item, index) in menu" :key="index" :to="item.link" class="block mt-4 lg:inline-block lg:mt-0 px-4 py-2" :class="index && 'border-r'">
+            <nuxt-link
+              v-for="(item, index) in menu"
+              :key="index"
+              :to="item.link"
+              class="block mt-4 lg:inline-block lg:mt-0 px-4 py-2"
+              :class="index && 'border-r'"
+            >
               {{ item.title }}
-          </router-link>
-        </div>
+            </nuxt-link>
+          </div>
         </div>
       </nav>
     </header>
 
     <nuxt-page></nuxt-page>
+
+    <footer class="bg-white">
+      <div class="bg-gray-200 font-shabnam">
+        <div class="flex flex-wrap sizeScreen py-5 px-4">
+          <div class="flex flex-col justify-around w-full lg:w-1/3 pl-4">
+            <div class="flex items-center">
+              <img src="~/assets/images/logo.png" alt="لوگو" class="w-80" />
+            </div>
+          </div>
+          <div class="w-full lg:w-1/3 px-4 flex sm:flex-row flex-col justify-around py-3">
+            <div class="sm:w-1/2 w-full flex flex-col">
+              <nuxt-link
+                v-for="(item, index) in footer_first_menu"
+                :key="index"
+                :to="item.link"
+                class="text-center font-bold text-sm p-3 pl-3"
+                :class="index && 'border-r'"
+              >
+                {{ item.title }}
+              </nuxt-link>
+            </div>
+            <div class="sm:w-1/2 w-full flex flex-col">
+              <nuxt-link
+                v-for="(item, index) in footer_second_menu"
+                :key="index"
+                :to="item.link"
+                class="text-center font-bold text-sm p-3 pl-3"
+                :class="index && 'border-r'"
+              >
+                {{ item.title }}
+              </nuxt-link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-wrap justify-between py-1 sizeScreen px-4">
+        <a
+          target="_blank"
+          class="flex items-center text-sm text-customBlue text-justify pl-5"
+          href="#"
+          >© کپی رایت تمامی حقوق مادی و معنوی این سرویس متعلق به تاپ نیوز است</a
+        >
+        <div class="flex flex-wrap items-center justify-center py-3 w-full lg:w-auto">
+          <a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="instagram" /> </a
+          ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="linkdin" /> </a
+          ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="facebook" /> </a
+          ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="telegram" /> </a
+          ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="aparat" /> </a
+          ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
+            <base-icon name="youtube" />
+          </a>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -100,6 +149,44 @@ const menu = ref([
   },
   {
     title: "فیلم",
+    link: "#",
+  },
+]);
+
+const footer_first_menu = ref([
+  {
+    title: "تماس با ما",
+    link: "#",
+  },
+  {
+    title: "قوانین و مقررات",
+    link: "#",
+  },
+  {
+    title: "سوالات متداول",
+    link: "#",
+  },
+  {
+    title: "درباره ما",
+    link: "#",
+  },
+]);
+
+const footer_second_menu = ref([
+  {
+    title: "جامعه",
+    link: "#",
+  },
+  {
+    title: "اقتصاد",
+    link: "#",
+  },
+  {
+    title: "بین الملل",
+    link: "#",
+  },
+  {
+    title: "سیاست",
     link: "#",
   },
 ]);
