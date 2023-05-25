@@ -4,8 +4,12 @@
       <div class="col-span-2">
         <ElementsTopNews :info="topNews" />
       </div>
-      <div class="col-span-1">02</div>
-      <div class="col-span-1">03</div>
+      <div class="col-span-1">
+        <ElementsCampaignsList />
+      </div>
+      <div class="col-span-1">
+        <ElementsCampaignsList />
+      </div>
     </div>
   </div>
 </template>

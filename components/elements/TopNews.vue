@@ -9,7 +9,7 @@
       <h3 class="text-lg">
         <nuxt-link to="/" class="cursor-pointer block">
           <div
-            class="absolute w-full text-white bottom-0 right-3 p-3"
+            class="absolute w-full text-white bottom-0 p-3"
             style="
               background: linear-gradient(
                 to bottom,
