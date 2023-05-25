@@ -1,12 +1,11 @@
 <template>
-  <div>
-    <div v-if="news" v-for="(item, index) in news.collection" :key="index"> 
-      <nuxt-link
-        :to="'/news/' + item.titlePage"
-        class="cursor-pointer block"
-      >
-        {{ item.titlePage }}
-      </nuxt-link>
+  <div class="container mx-auto">
+    <div class="grid grid-rows-1 grid-flow-col gap-4 mt-4">
+      <div class="col-span-2">
+        <ElementsTopNews :info="topNews" />
+      </div>
+      <div class="col-span-1">02</div>
+      <div class="col-span-1">03</div>
     </div>
   </div>
 </template>
@@ -26,6 +25,15 @@ const { news, pending } = useNewsList();
 //     },
 //   })
 // );
+
+const topNews = ref({
+  image:
+    "https://media.farsnews.ir/Uploaded/Files/Images/1402/03/03/14020303000552_Test_PhotoN.jpg",
+  alt:
+    "رهبرانقلاب: مجلس یازدهم را همچنان انقلابی، جوان و پرتحرک می‌دانم/ نگاه مجلس در تنظیم رابطه با دولت همکاری و هم‌افزایی باشد",
+  text:
+    "رهبرانقلاب: مجلس یازدهم را همچنان انقلابی، جوان و پرتحرک می‌دانم/ نگاه مجلس در تنظیم رابطه با دولت همکاری و هم‌افزایی باشد",
+});
 </script>
 <style scoped lang="postcss">
 .g-head-anime {
