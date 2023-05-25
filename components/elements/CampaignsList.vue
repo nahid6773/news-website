@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col bg-gray-200 mb-2 rounded-lg">
+  <div class="flex flex-col bg-white mb-2 rounded-lg min-h-[330px]">
     <div class="flex flex-col relative">
       <nuxt-link
         class="flex h-10 bg-primary text-white top-0 right-0 w-full justify-between py-2 px-3 rounded-t-lg"
@@ -8,7 +8,7 @@
         <span class="flex items-center">
           <IconNewsPaper />
         </span>
-        <span class="flex items-center users"> ۶,۱۷۷,۹۲۵ عضو </span>
+        <span class="flex items-center"> ۶,۱۷۷,۹۲۵ عضو </span>
       </nuxt-link>
       <!-- To Do Carosel -->
       <div>
@@ -48,7 +48,7 @@
       </div>
 
       <div
-        class="relative border-t-4 border-[#f1f1f1] flex justify-around items-center py-3"
+        class="relative border-t-4 border-[#f1f1f1] flex justify-around items-center py-1"
       >
         <span class="flex flex-col items-center justify-center pr-1">
           <span class="text-sm text-gray-500">سوژه ها</span>

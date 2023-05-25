@@ -5,7 +5,7 @@
         <ElementsTopNews :info="topNews" />
       </div>
       <div class="col-span-1">
-        <ElementsCampaignsList />
+        <ElementsFavouriteNews/>
       </div>
       <div class="col-span-1">
         <ElementsCampaignsList />
