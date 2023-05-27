@@ -15,6 +15,31 @@ body {
   @apply text-gray-600;
 }
 
+/* Custom Swiper styles */
+.carousel .swiper-slide,
+.carousel1 .swiper-slide {
+  @apply opacity-0 transition-opacity duration-300;
+}
+.carousel .swiper-slide.swiper-slide-visible,
+.carousel1 .swiper-slide.swiper-slide-visible {
+  @apply opacity-100;
+}
+.swiper-button-disabled {
+  @apply opacity-50 cursor-default pointer-events-none;
+}
+/* .testimonial-carousel .swiper-slide {
+  @apply opacity-0 transition-opacity duration-300;
+}
+.testimonial-carousel .swiper-slide.swiper-slide-visible {
+  @apply opacity-100;
+}
+.swiper-pagination-bullet {
+  @apply bg-gray-300 opacity-100;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-blue-400;
+} */
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
