@@ -15,7 +15,8 @@ module.exports = {
       ...colors,
       transparent: 'transparent',
       current: 'currentColor',
-      'primary': '#385E9D',
+      'primary': '#005b3d',
+      'greenlight':'#1c9541'
     },
     extend: {},
   },

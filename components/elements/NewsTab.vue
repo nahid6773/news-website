@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col bg-white gap-y-3">
     <div class="flex w-full justify-between items-center">
-      <span class="btn-tab">پرخواننده ها</span>
-      <span class="btn-tab">پربحث ها</span>
-      <span class="btn-tab">توصیه شده ها</span>
+      <span class="btn-tab bg-primary">پرخواننده ها</span>
+      <span class="btn-tab bg-primary">پربحث ها</span>
+      <span class="btn-tab bg-primary">توصیه شده ها</span>
     </div>
     <div class="relative z-0 overflow-y-scroll bg-white w-full h-[400px]">
       <div class="overflow-x-hidden pt-3">
@@ -42,7 +42,7 @@ export default {
 <style scoped>
 .btn-tab {
   border-radius: 12px 0 12px 0;
-  background-color: #005b3d;
+  /* background-color: #005b3d; */
   padding: 5px 16px;
   color: white;
   font-weight: bold;

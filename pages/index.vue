@@ -11,17 +11,17 @@
         <ElementsPublicity />
       </div>
     </div>
-    <!-- <div class="grid grid-rows-1 grid-flow-col gap-4 mt-4 w-full">
+    <div class="grid grid-rows-1 grid-flow-col gap-4 mt-4 w-full">
       <div class="col-span-1">
-        <ElementsNewsList :data="news"/>
+        <ElementsLatestNews :data="news"/>
       </div>
       <div class="col-span-2">
-        <ElementsNewsTab :data="news" />
+        hjhj
       </div>
       <div class="col-span-4">
-        <ElementsPublicity />
+        jmhmf
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
