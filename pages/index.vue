@@ -15,13 +15,18 @@
       </div>
 
       <div class="w-[25%]">
-        <ElementsNewsTab :data="news" class="my-4" />
+        <ElementsNewsTab v-if="news" :data="news" class="my-4" />
         <br />
         <ElementsNotes :data="notes" class="my-4" />
         <br />
         <CarouselComments :data="comments" class="my-4" />
         <br />
         <ElementsTopNews :info="images[0]" />
+        <br />
+        <div>
+          <BaseTitle label="اخبار مهم" />
+          <BaseList v-if="news" :data="news" />
+        </div>
         <!-- <CarouselSingleImg :data="images" /> -->
       </div>
       <div class="w-[25%]">
