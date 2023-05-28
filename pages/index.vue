@@ -4,9 +4,10 @@
       <!-- First Colomn -->
       <div class="w-[50%]">
         <!-- <CarouselSingleNew /> -->
-        <BaseCard v-if="news" :info="news.collection[0]" />
+        <BaseHorizontalCard v-if="news" :info="news.collection[0]" class="my-4" />
+        <br>
+        <CarouselMultipleNews v-if="news" :data="news" class="my-4" />
         <ElementsLatestNews :data="news"/>
-
       </div>
 
       <div class="w-[25%]">
