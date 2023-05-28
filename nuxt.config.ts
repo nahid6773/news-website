@@ -7,6 +7,4 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  modules: ['nuxt-swiper'],
-  swiper: {},
 })
