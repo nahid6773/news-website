@@ -1,21 +1,21 @@
 <template>
   <div class="container mx-auto">
-    <div class="flex gap-6 my-4">
+    <div class="flex gap-6 my-4" v-if="news">
       <!-- First Colomn -->
       <div class="w-[50%]">
         <!-- <CarouselSingleNew /> -->
-        <BaseHorizontalCard v-if="news" :info="news[0]" class="my-4" />
+        <BaseHorizontalCard :info="news[0]" class="my-4" />
         <br />
-        <CarouselMultipleNews v-if="news" :data="news" class="my-4" />
+        <CarouselMultipleNews :data="news" class="my-4" />
         <br />
-        <ElementsLatestNews v-if="news" :data="news" class="my-4" />
+        <ElementsLatestNews :data="news" class="my-4" />
         <br />
         <br />
         <ElementsTopNews :info="topNews" />
       </div>
 
       <div class="w-[25%]">
-        <ElementsNewsTab v-if="news" :data="news" class="my-4" />
+        <ElementsNewsTab :data="news" class="my-4" />
         <br />
         <ElementsNotes :data="notes" class="my-4" />
         <br />
@@ -25,7 +25,7 @@
         <br />
         <div>
           <BaseTitle label="اخبار مهم" />
-          <BaseList v-if="news" :data="news" />
+          <BaseList :data="news" />
         </div>
         <!-- <CarouselSingleImg :data="images" /> -->
       </div>
