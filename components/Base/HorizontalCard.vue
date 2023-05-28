@@ -9,26 +9,26 @@
         ><b class="w-10 block text-[10px]">اسفند</b>
       </div>
       <div class="block overflow-hidden float-right w-[30%] bg-[#fafafa]">
-        <NuxtLink :to="'/news/' + info.titlePage"
+        <NuxtLink :to="'/news/' + info.title"
           ><img
             src="https://picsum.photos/200/200"
-            :alt="info.titlePage"
+            :alt="info.title"
         /></NuxtLink>
       </div>
       <div class="top-0 left-0 bottom-0 float-right w-[70%] p-4">
         <div class="mb-1">
-          <span class="text-xs text-gray-400">{{ info.newsAgencyName }}</span>
+          <span class="news-subtitle">{{ info.subtitle }}</span>
         </div>
         <h2>
           <NuxtLink
-            :to="'/news/' + info.titlePage"
-            class="mb-1 text-base font-normal text-gray-900 leading-10 hover:text-lime-600"
+            :to="'/news/' + info.title"
+            class="news-title mb-1 !leading-10"
           >
-            {{ info.titlePage }}
+            {{ info.title }}
           </NuxtLink>
         </h2>
-        <p class="text-justify text-xs text-gray-500 leading-6">
-          {{ info.lead }}
+        <p class="news-text">
+          {{ info.text }}
         </p>
       </div>
     </div>

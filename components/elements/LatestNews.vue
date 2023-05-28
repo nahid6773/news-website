@@ -2,7 +2,7 @@
   <div>
     <BaseTitle label="آخرین مطالب" />
     <div v-for="item in 8" :key="item">
-      <BaseHorizontalCard :info="data.collection[item]" show-date />
+      <BaseHorizontalCard :info="data[item]" show-date />
     </div>
   </div>
   <!-- <div class="flex flex-col gap-y-3" v-if="data">

@@ -15,6 +15,12 @@ export const useNewsList = () => {
             execute();
         }
     })
-    let news = data._rawValue
+    let news = data._rawValue?.collection.map(res => {
+      return {
+        title: res.titlePage,
+        subtitle: res.newsAgencyName,
+        text: res.lead
+      }
+    })
     return { news, pending }
 }

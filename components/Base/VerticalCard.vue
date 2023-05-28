@@ -4,20 +4,20 @@
         class="w-full relative h-auto mb-2 items-center justify-center bg-[#fafafa] shadow-lg"
       >
         <div class="h-40 relative block overflow-hidden">
-          <NuxtLink :to="'/news/' + info.titlePage"
-            ><img src="https://picsum.photos/300/300" :alt="info.titlePage"
+          <NuxtLink :to="'/news/' + info.title"
+            ><img src="https://picsum.photos/300/300" :alt="info.title"
           /></NuxtLink>
         </div>
         <div class="top-0 left-0 bottom-0 float-right p-4">
           <div class="mb-1">
-            <span class="text-xs text-gray-400">{{ info.newsAgencyName }}</span>
+            <span class="news-subtitle">{{ info.subtitle }}</span>
           </div>
           <h2>
             <NuxtLink
-              :to="'/news/' + info.titlePage"
-              class="mb-1 text-sm font-semibold text-gray-700 leading-6 hover:text-lime-600"
+              :to="'/news/' + info.title"
+              class="news-title mb-1 !text-sm"
             >
-              {{ info.titlePage }}
+              {{ info.title }}
             </NuxtLink>
           </h2>
         </div>

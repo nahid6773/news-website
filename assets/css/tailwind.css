@@ -15,6 +15,17 @@ body {
   @apply text-gray-600;
 }
 
+/* base class */
+.news-title {
+  @apply text-base font-semibold text-gray-800 leading-6 hover:text-lime-600
+}
+.news-subtitle {
+  @apply text-xs text-gray-400
+}
+.news-text {
+  @apply text-justify text-xs text-gray-500 leading-6
+}
+
 /* Custom Swiper styles */
 .carousel .swiper-slide,
 .carousel1 .swiper-slide {

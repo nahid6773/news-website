@@ -3,7 +3,7 @@
     <BaseTitle label="آخرین مطالب" />
     <div class="flex relative">
     <div v-for="i in 3" :key="i" class="w-1/3 mx-1 bg-white">
-      <BaseVerticalCard :info="data.collection[i]" />
+      <BaseVerticalCard :info="data[i]" />
     </div>
   </div>
   </div>

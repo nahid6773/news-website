@@ -4,15 +4,17 @@
       <!-- First Colomn -->
       <div class="w-[50%]">
         <!-- <CarouselSingleNew /> -->
-        <BaseHorizontalCard v-if="news" :info="news.collection[0]" class="my-4" />
-        <br>
+        <BaseHorizontalCard v-if="news" :info="news[0]" class="my-4" />
+        <br />
         <CarouselMultipleNews v-if="news" :data="news" class="my-4" />
-        <br>
-        <ElementsLatestNews v-if="news" :data="news" class="my-4"/>
+        <br />
+        <ElementsLatestNews v-if="news" :data="news" class="my-4" />
       </div>
 
       <div class="w-[25%]">
-        <ElementsNewsTab :data="news" />
+        <ElementsNewsTab :data="news" class="my-4" />
+        <br />
+        <ElementsNotes :data="notes" class="my-4" />
         <!-- <CarouselSingleImg :data="images" /> -->
       </div>
       <div class="w-[25%]">
@@ -35,6 +37,7 @@
 <script setup>
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
+
 // const { data: news, error } = await useAsyncData("news", () =>
 //   $fetch(`News/NewsByDate`, {
 //     method: "GET",
@@ -83,6 +86,27 @@ const images = ref([
     alt: "حال ناخوش داروخانه‌ها در رویارویی با مشکلات مالی",
     title: "دبیر انجمن داروسازان استان تهران",
     text: "حال ناخوش داروخانه‌ها در رویارویی با مشکلات مالی",
+  },
+]);
+
+const notes = ref([
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
   },
 ]);
 </script>
