@@ -1,23 +1,24 @@
 <template>
   <div class="container mx-auto">
-    <div class="grid grid-flow-col gap-4 mt-4">
+    <div class="flex gap-6 my-4">
       <!-- First Colomn -->
-      <div class="col-span-2">
-        <CarouselSingleNew />
-        <!-- <BaseCard :info="topNews" /> -->
+      <div class="w-[50%]">
+        <!-- <CarouselSingleNew /> -->
+        <BaseCard v-if="news" :info="news.collection[0]" />
+        <ElementsLatestNews :data="news"/>
+
       </div>
 
-      <div class="col-span-1">
+      <div class="w-[25%]">
         <ElementsNewsTab :data="news" />
-        <CarouselSingleImg :data="images" />
+        <!-- <CarouselSingleImg :data="images" /> -->
       </div>
-      <div class="col-span-1">
+      <div class="w-[25%]">
         <ElementsPublicity />
       </div>
     </div>
-    <div class="grid grid-rows-1 grid-flow-col gap-4 mt-4 w-full">
+    <!-- <div class="grid grid-rows-1 grid-flow-col gap-4 mt-4 w-full">
       <div class="col-span-1">
-        <ElementsLatestNews :data="news"/>
       </div>
       <div class="col-span-2">
         hjhj
@@ -25,14 +26,13 @@
       <div class="col-span-4">
         jmhmf
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
-
 // const { data: news, error } = await useAsyncData("news", () =>
 //   $fetch(`News/NewsByDate`, {
 //     method: "GET",
