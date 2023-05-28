@@ -9,13 +9,13 @@
       <div class="overflow-x-hidden pt-3">
         <ul class="list-disc list-inside w-full" v-if="data">
           <li
-            v-for="(n, index) in data.collection"
+            v-for="(n, index) in data"
             :key="index"
             class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
           >
             <span class="index-tab flex items-center justify-center ml-2">{{ index + 1 }}</span>
             <h3 class="item-tab">
-              {{ n.titlePage }}
+              {{ n.title }}
             </h3>
           </li>
         </ul>

@@ -9,12 +9,16 @@
         <CarouselMultipleNews v-if="news" :data="news" class="my-4" />
         <br />
         <ElementsLatestNews v-if="news" :data="news" class="my-4" />
+        <br />
+        <br />
+        <ElementsTopNews :info="topNews" />
       </div>
 
       <div class="w-[25%]">
         <ElementsNewsTab :data="news" class="my-4" />
         <br />
         <ElementsNotes :data="notes" class="my-4" />
+        <br />
         <!-- <CarouselSingleImg :data="images" /> -->
       </div>
       <div class="w-[25%]">
