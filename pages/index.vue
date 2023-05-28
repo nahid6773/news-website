@@ -7,7 +7,8 @@
         <BaseHorizontalCard v-if="news" :info="news.collection[0]" class="my-4" />
         <br>
         <CarouselMultipleNews v-if="news" :data="news" class="my-4" />
-        <ElementsLatestNews :data="news"/>
+        <br>
+        <ElementsLatestNews v-if="news" :data="news" class="my-4"/>
       </div>
 
       <div class="w-[25%]">

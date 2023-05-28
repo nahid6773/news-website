@@ -1,5 +1,11 @@
 <template>
-  <div class="flex flex-col gap-y-3" v-if="data">
+  <div>
+    <BaseTitle label="آخرین مطالب" />
+    <div v-for="item in 8" :key="item">
+      <BaseHorizontalCard :info="data.collection[item]" show-date />
+    </div>
+  </div>
+  <!-- <div class="flex flex-col gap-y-3" v-if="data">
     <div
       class="bg-white h-40 flex items-center justify-between"
       v-for="item in 8"
@@ -20,9 +26,11 @@
         }}</span>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
-<script>
+
+<!--<script>
+
 export default {
   name: "latestNews",
 
@@ -41,4 +49,13 @@ export default {
 
 </script>
 
-<style scoped></style>
+<style scoped></style> -->
+
+<script setup>
+const props = defineProps({
+  data: {
+    type: Object,
+    required: false,
+  },
+});
+</script>
