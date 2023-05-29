@@ -13,10 +13,14 @@
             :key="index"
             class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
           >
-            <span class="index-tab flex items-center justify-center ml-2">{{ index + 1 }}</span>
-            <h3 class="item-tab">
-              {{ n.title }}
-            </h3>
+            <span class="index-tab flex items-center justify-center ml-2">{{
+              index + 1
+            }}</span>
+            <NuxtLink  to="#">
+              <h3 class="item-tab">
+                {{ n.title }}
+              </h3>
+            </NuxtLink>
           </li>
         </ul>
       </div>
@@ -47,24 +51,24 @@ export default {
   color: white;
   font-weight: bold;
   width: 135px;
-  font-size: 14px;
+  font-size: 12px;
   text-align: center;
 }
 .item-tab {
   color: black;
   /* border-bottom: 1px solid gray; */
   width: 100%;
-  transition: .5s;
+  transition: 0.5s;
   cursor: pointer;
 }
 .item-tab:hover {
   color: #ffb81c;
 }
-.index-tab{
-    background-color: #ffb81c;
-    border-radius: 12px 0 12px 0;
-    width: 30px;
-    height: 20px;
-    color: white;
+.index-tab {
+  background-color: #ffb81c;
+  border-radius: 12px 0 12px 0;
+  width: 30px;
+  height: 20px;
+  color: white;
 }
 </style>

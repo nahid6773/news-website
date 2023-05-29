@@ -73,3 +73,42 @@ body {
   ;
   border-radius: 10px;
 }
+.gridClass {
+  width: 290px;
+  margin: 0 auto;
+}
+@media (min-width: 375px) {
+  .gridClass {
+    width: 345px;
+  }
+}
+@media (min-width: 425px) {
+  .gridClass {
+    width: 400px;
+  }
+}
+@media (min-width: 768px) {
+  .gridClass {
+    width: 720px;
+  }
+}
+@media (min-width: 1024px) {
+  .gridClass {
+    width: 924px;
+  }
+}
+@media (min-width: 1280px) {
+  .gridClass {
+    width: 1190px;
+  }
+}
+@media (min-width: 1440px) {
+  .gridClass {
+    width: 1350px;
+  }
+}
+@media (min-width: 2560px) {
+  .gridClass {
+    width: 1440px;
+  }
+}
