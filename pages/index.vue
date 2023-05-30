@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto mt-5">
     <div class="flex gap-6 my-4" v-if="news">
       <!-- First Colomn -->
       <div class="w-[50%]">
