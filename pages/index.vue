@@ -3,8 +3,7 @@
     <div class="flex gap-6 my-4" v-if="news">
       <!-- First Colomn -->
       <div class="w-[50%]">
-        <!-- <CarouselSingleNew /> -->
-        <BaseHorizontalCard :info="news[0]" class="my-4" />
+        <CarouselSingleNew :items="news" />
         <br />
         <CarouselMultipleNews :data="news" class="my-4" />
         <br />
