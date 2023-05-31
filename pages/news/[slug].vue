@@ -1,6 +1,23 @@
 <template>
-  <div class="bg-gray-50 py-6">
-    <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+  <div class="gridClass">
+    <div class="py-6 flex items-start justify-between w-full">
+      <div class=" bg-white flex flex-col gap-y-3">
+        <div class="flex items-center justify-between w-full px-2">
+          <span class="bg-primary p-2 text-white">خانه</span>
+          <span>like</span>
+        </div>
+        <div>
+          <span>معون وزیر راه و شهرسازی</span>
+          <h1>نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات</h1>
+        </div>
+      </div>
+      <div class="w-60">
+        <ElementsNotes :data="notes" />
+      </div>
+      <div class="w-60">
+        <ElementsPublicity />
+      </div>
+      <!-- <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
       <div class="flex flex-row flex-wrap">
         <div class="flex-shrink max-w-full w-full lg:w-2/3 overflow-hidden">
           <div class="w-full py-3 mb-3">
@@ -126,6 +143,7 @@
           </div>
         </div>
       </div>
+    </div> -->
     </div>
   </div>
 </template>
@@ -138,7 +156,8 @@ import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
 
 const selectedNew =
-  !pending.value && news.collection.find((item) => item.titlePage == route.params.slug);
+  !pending.value &&
+  news.collection.find((item) => item.titlePage == route.params.slug);
 
 useHead({
   title: route.params.slug,
@@ -149,6 +168,26 @@ useHead({
     },
   ],
 });
+const notes = ref([
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+]);
 </script>
 
 <style scoped>

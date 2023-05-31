@@ -1,10 +1,10 @@
 <template>
   <div>
     <BaseTitle label="یادداشت ها" />
-    <div class="flex flex-wrap">
-      <div v-for="(item, index) in data" :key="index">
+    <div class="flex  flex-col bg-white">
+      <template v-for="(item, index) in data" :key="index">
         <BaseHorizontalCard :info="item" avatar inverse />
-      </div>
+      </template>
     </div>
   </div>
 </template>

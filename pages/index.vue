@@ -13,7 +13,6 @@
         <br />
         <ElementsTopNews :info="topNews" />
       </div>
-
       <div class="w-[25%]">
         <ElementsNewsTab :data="news" class="my-4" />
         <br />

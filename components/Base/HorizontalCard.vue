@@ -1,5 +1,7 @@
 <template>
-  <section class="mb-4">
+<div class="bg-red">
+
+  <section class="border-b-2 mb-2">
     <div class="w-full flex relative bg-white shadow-lg before:table before:content['']">
       <div
         v-if="showDate"
@@ -40,6 +42,7 @@
       </div>
     </div>
   </section>
+</div>
 </template>
 
 <script setup>
