@@ -10,14 +10,15 @@
         <span class="text-sm w-10 block">10</span
         ><b class="w-10 block text-[10px]">اسفند</b>
       </div>
-      <div v-if="avatar" class="block overflow-hidden float-right w-[30%] bg-[#fafafa] my-auto mx-0">
+      <div
+        v-if="avatar"
+        class="block overflow-hidden float-right w-[30%] bg-[#fafafa] my-auto mx-0"
+      >
         <BaseAvatar />
       </div>
       <div v-else class="block overflow-hidden float-right w-[30%] bg-[#fafafa]">
         <NuxtLink :to="'/news/' + info.title"
-          ><img
-            src="https://picsum.photos/200/200"
-            :alt="info.title"
+          ><img src="https://picsum.photos/300/300" :alt="info.title"
         /></NuxtLink>
       </div>
       <div class="top-0 left-0 bottom-0 float-right w-[70%] p-4">
@@ -39,6 +40,7 @@
         <p class="news-text">
           {{ info.text }}
         </p>
+        <slot name="footer"></slot>
       </div>
     </div>
   </section>
