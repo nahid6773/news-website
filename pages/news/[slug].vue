@@ -1,7 +1,7 @@
 <template>
   <div class="gridClass">
-    <div class="py-6 flex items-start justify-between w-full">
-      <div class="w-7/12 flex flex-col gap-y-5">
+    <div class="py-6 flex items-start justify-between w-full flex-wrap">
+      <div class="w-full lg:w-6/12 xl:w-7/12 flex flex-col gap-y-5">
         <div class="w-full bg-white flex flex-col gap-y-6 p-3">
           <div class="flex items-center justify-between w-full px-2">
             <span class="bg-gray-300 py-1 px-4 text-gray-500">خانه</span>
@@ -138,10 +138,11 @@
           </div>
         </div>
       </div>
-      <div class="w-72">
+      <div class="w-full lg:w-56 xl:w-72">
         <ElementsNotes :data="notes" />
+        <!-- <ElementsLatestNews :data="news" /> -->
       </div>
-      <div class="w-48">
+      <div class="w-full lg:w-48">
         <ElementsPublicity />
       </div>
     </div>
@@ -188,20 +189,4 @@ const notes = ref([
 ]);
 </script>
 
-<style scoped>
-.new-img {
-  background-size: 100% 100%;
-}
-.post-number {
-  counter-reset: my-counter;
-}
-
-.post-number li a::before {
-  font-size: 2rem;
-  counter-increment: my-counter;
-  content: counter(my-counter);
-  color: #ced4da !important;
-  width: 3rem;
-  margin-right: 0.5rem;
-}
-</style>
+<style scoped></style>

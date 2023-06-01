@@ -14,7 +14,7 @@
     </div>
     <div class="h-14 w-full bg-gray-600 flex items-center">
       <div class="gridClass py-4">
-        <div class="flex items-center justify-start">
+        <div class="flex items-center justify-start flex-wrap">
           <span
             class="mx-2 text-white text-sm cursor-pointer px-2 py-2 hover:text-greenlight"
             :class="index && 'border-r'"

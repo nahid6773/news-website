@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center gap-y-7 w-full">
+  <div class="flex flex-col items-center gap-y-7 w-full flex-wrap">
     <img
       class="img-publicity"
       src="https://media.farsnews.ir/Uploaded/Files/Documents/1402/02/31/14020231000406_Test.gif"

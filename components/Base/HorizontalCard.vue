@@ -4,6 +4,7 @@
       <div
         class="w-full flex relative bg-white shadow-lg before:table before:content['']"
       >
+      <!-- showDate -->
         <div
           v-if="showDate"
           class="border-2 border-primary w-12 h-12 text-center leading-3 absolute -mr-2 mt-2 bg-white p-1 hover:bg-primary hover:text-white"
@@ -11,6 +12,7 @@
           <span class="text-sm w-10 block">10</span
           ><b class="w-10 block text-[10px]">اسفند</b>
         </div>
+        <!-- avatar -->
         <div
           v-if="avatar"
           class="block overflow-hidden float-right w-[30%] bg-[#fafafa] my-auto mx-0"
