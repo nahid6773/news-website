@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-primary h-24 mb-20 pt-3">
+  <header class="bg-primary mb-20 pt-3">
     <nav class="gridClass">
       <div class="relative flex justify-between items-center">
         <div class="flex flex-1 items-center">
@@ -62,13 +62,14 @@
         </div>
       </div>
     </nav>
-    <div class="w-full bg-white h-16" style="margin-top: -26px">
+    <BaseAnimateText :items="text" label="اخبار ویژه" />
+    <!-- <div class="w-full bg-white h-16" style="margin-top: -26px">
       <div class="gridClass">
         <div class="flex items-center justify-end pt-6">
           <span class="bg-primary text-white px-7 py-2">اخبار ویژه</span>
         </div>
       </div>
-    </div>
+    </div> -->
   </header>
 </template>
 
@@ -122,12 +123,22 @@ export default {
           link: "#",
         },
       ],
+
+      text: [
+        '1.جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد',
+        '2.اگر یک روز از عمرم باقی باشد، آرزو دارم به مردم سیستان خدمت کنم',
+        '3.رأفت اسلامی حاکم است اما اجازه ناامنی نمی‌دهیم',
+        '4.نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات',
+        '5.پیشرفت‌های ایران دوست و دشمن را متعجب کرده است',
+        '6.نیویورک‌تایمز ادعای ترامپ درباره ناسا و ایران را رد کرد',
+        '7.بایرن خواهان قرض‌گرفتن مدافع منچسترسیتی در زمستان',
+      ]
       // currentTime: Date.now(),
     };
   },
   methods: {
     updateDate() {
-      const date = new Date();
+      let date = new Date();
       date++;
     },
   },

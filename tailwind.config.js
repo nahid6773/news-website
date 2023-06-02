@@ -23,7 +23,18 @@ module.exports = {
       'gray-600':'#374151',
       'gray-700':'#1f2937',
     },
-    extend: {},
+    extend: {
+      animation: {
+        leftToRight: 'leftToRight 20s linear 1s infinite normal none running'
+      },
+      keyframes: {
+        leftToRight: {
+          '0%': { left: '-100%' },
+          '50%': { left: '100%' },
+          '100%': { left: '-100%' },
+        }
+      }
+    },
   },
   plugins: [],
 }
