@@ -10,11 +10,12 @@
               class="h-10 mt-1"
           /></a>
         </div>
-        <div
+        <BaseCurrentTime />
+        <!-- <div
           class="flex items-center justify-center text-white lable px-3 py-2"
         >
           <span> Tuesday - 29 June - 2021 11:48:20{{ interval }}</span>
-        </div>
+        </div> -->
       </div>
       <div class="flex items-center justify-center">
         <div
