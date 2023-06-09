@@ -23,16 +23,30 @@ module.exports = {
       'gray-600':'#374151',
       'gray-700':'#1f2937',
     },
+    screens: {
+      'mobile-s': '320px',
+      'mobile-m': '375px',
+      'mobile-l': '425px',
+      tablet: '768px',
+      laptop: '1024px',
+      'laptop-m': '1250px',
+      'laptop-l': '1440px',
+      '4k': '2560px',
+    },
     extend: {
       animation: {
-        leftToRight: 'leftToRight 20s linear 1s infinite normal none running'
+        marquee: 'marquee 40s linear infinite',
+        marquee2: 'marquee2 40s linear infinite',
       },
       keyframes: {
-        leftToRight: {
-          '0%': { left: '-100%' },
-          '50%': { left: '100%' },
-          '100%': { left: '-100%' },
-        }
+        marquee: {
+          '0%': { transform: 'translateX(-110%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(-50%)' },
+          '100%': { transform: 'translateX(110%)' },
+        },
       }
     },
   },

@@ -24,7 +24,6 @@ if (process.client) {
 }
 
 const goToTop = () => {
-  console.log("object");
   window.scrollTo({
     top: 0,
     behavior: "smooth",
