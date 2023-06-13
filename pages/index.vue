@@ -1,14 +1,14 @@
 <template>
-  <div class="container mx-auto mt-5">
+  <div class="gridClass mx-auto mt-5">
     <div class="flex gap-6 my-4" v-if="news">
-      <!--  Colomn 1-->
+      <!--  Column 1-->
       <div class="w-[50%] flex flex-col gap-y-5">
         <CarouselSingleNew :items="news" />
         <CarouselMultipleNews :data="news" class="my-4" />
         <ElementsLatestNews :data="news" class="my-4" />
         <ElementsTopNews :info="topNews" />
       </div>
-      <!--  Colomn 2-->
+      <!--  Column 2-->
       <div class="w-[25%] flex flex-col gap-y-5">
         <ElementsNewsTab :data="news" class="my-4" />
         <ElementsNotes :data="notes" class="my-4" />
@@ -19,8 +19,7 @@
           <BaseList :data="news" />
         </div>
       </div>
-      <!--  Colomn 3-->
-
+      <!--  Column 3-->
       <div class="w-[25%]">
         <ElementsPublicity />
       </div>

@@ -5,11 +5,11 @@
         <div class="w-full bg-white flex flex-col gap-y-6 p-3">
           <div class="flex items-center justify-between w-full px-2">
             <span class="bg-gray-300 py-1 px-4 text-gray-500">خانه</span>
-            <span><IconLike /></span>
+            <span class="cursor-pointer"><IconLike /></span>
           </div>
           <div class="flex flex-col gap-y-3">
             <span class="text-sm text-gray-400">معاون وزیر راه و شهرسازی</span>
-            <h1 class="font-bold text-lg">
+            <h1 class="font-bold text-lg hover:text-yellow-600 cursor-pointer">
               نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات
             </h1>
           </div>
@@ -138,9 +138,10 @@
           </div>
         </div>
       </div>
-      <div class="w-full lg:w-56 xl:w-72">
+      <div class="w-full flex flex-col gap-y-5 lg:w-56 xl:w-72">
+
         <ElementsNotes :data="notes" />
-        <!-- <ElementsLatestNews :data="news" /> -->
+        <ElementsLatestContent :data="content" />
       </div>
       <div class="w-full lg:w-48">
         <ElementsPublicity />
@@ -186,6 +187,105 @@ const notes = ref([
     title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
     subtitle: "علی بخشایشی",
   },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+  {
+    avatar:
+      "http://mellat.demo-qaleb.ir/wp-content/uploads/2019/12/13980701000376_Test_PhotoN-450x320.jpg",
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    subtitle: "علی بخشایشی",
+  },
+]);
+const content = ref([
+  {
+    id: 1,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 2,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 3,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 4,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 5,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 6,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 7,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 8,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 9,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 10,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+    {
+    id: 6,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 7,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 8,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 9,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    img: "https://picsum.photos/300/300",
+    date: "04 دی 1401 12:45",
+  },
+ 
 ]);
 </script>
 

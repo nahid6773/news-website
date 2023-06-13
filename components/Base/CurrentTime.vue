@@ -1,5 +1,5 @@
 <template>
-  <div class="h-20 float-left pt-2">
+  <div class=" float-left pt-2">
     <div
       class="h-8 w-16 float-right text-xs leading-7 text-center text-[#eee] bg-black/50"
     >

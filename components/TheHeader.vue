@@ -1,5 +1,31 @@
 <template>
-  <header class="bg-primary mb-20 pt-3">
+  <header class="bg-primary mb-6 pt-3">
+    <!-- search overlay -->
+    <div
+      v-if="search"
+      class="w-full h-full fixed bottom-0 top-0 z-10 overlay-search flex flex-col items-center justify-center"
+    >
+      <IconClose
+        class="absolute top-10 right-14 text-white"
+        @click="search = false"
+      />
+      <div
+        class="relative mx-auto text-gray-600 lg:block hidden flex items-center justify-center"
+      >
+        <input
+          class="border-2 border-gray-300 bg-white h-14 pr-8 text-sm focus:outline-none text-sm focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-96 shadow-none bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
+          type="search"
+          name="search"
+          placeholder="متن جستجو ..."
+        />
+        <button
+          type="submit"
+          class="bg-yellow-600 text-white font-bold h-14 px-6"
+        >
+          جستجو
+        </button>
+      </div>
+    </div>
     <nav class="gridClass">
       <div class="relative flex justify-between items-center">
         <div class="flex flex-1 items-center">
@@ -11,66 +37,37 @@
           /></a>
         </div>
         <BaseCurrentTime />
-        <!-- <div
-          class="flex items-center justify-center text-white lable px-3 py-2"
-        >
-          <span> Tuesday - 29 June - 2021 11:48:20{{ interval }}</span>
-        </div> -->
       </div>
       <div class="flex items-center justify-center">
         <div
-          class="hidden md:flex items-center justify-between mt-5 shadow-md text-center bg-gray-600 w-full"
+          class=" md:flex items-center justify-between mt-7 shadow-md text-center bg-gray-600 w-full"
         >
-          <div class="py-2 text-xs font-bold text-white lg:flex-grow flex">
+          <div class=" hidden py-2 text-xs font-bold text-white lg:flex-grow lg:flex">
             <nuxt-link
               v-for="(item, index) in itemMenu"
               :key="index"
               :to="item.link"
-              class="block mt-4 lg:inline-block lg:mt-0 px-4 py-2"
+              class="block mt-4 lg:inline-block lg:mt-0 px-4 py-2 hover:text-greenlight"
               :class="index && 'border-r'"
             >
               {{ item.title }}
             </nuxt-link>
           </div>
-          <div class="flex items-center px-3">
-            <div class="relative mx-auto text-gray-600 lg:block hidden">
-              <input
-                class="border-2 border-gray-300 bg-white h-7 ml-2 pr-8 rounded-lg text-sm focus:outline-none text-sm focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-56 shadow-none rounded-full bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
-                type="search"
-                name="search"
-                placeholder="جستجو..."
-              />
-              <button type="submit" class="absolute right-0 bottom-1 mt-3 mr-2">
-                <base-icon name="search" />
-              </button>
-            </div>
-            <svg
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              aria-hidden="true"
-              class="w-6 h-6 text-white"
+          <div class="flex items-center justify-between px-3 lg:w-40 w-full">
+            <IconMenu />
+            <IconSearch @click="search = true" />
+            <button
+              class="flex items-center justify-between bg-gray-500 py-1 px-3 rounded-full"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-              ></path>
-            </svg>
+              <IconLight  />
+              <IconDark />
+            </button>
+            
           </div>
         </div>
       </div>
     </nav>
-    <BaseAnimateText :items="text" label="اخبار ویژه" />
-    <!-- <div class="w-full bg-white h-16" style="margin-top: -26px">
-      <div class="gridClass">
-        <div class="flex items-center justify-end pt-6">
-          <span class="bg-primary text-white px-7 py-2">اخبار ویژه</span>
-        </div>
-      </div>
-    </div> -->
+    <!-- <BaseAnimateText :items="text" label="اخبار ویژه" /> -->
   </header>
 </template>
 
@@ -80,6 +77,7 @@ export default {
 
   data() {
     return {
+      search: false,
       date: null,
       interval: null,
       itemMenu: [
@@ -126,14 +124,14 @@ export default {
       ],
 
       text: [
-        '1.جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد',
-        '2.اگر یک روز از عمرم باقی باشد، آرزو دارم به مردم سیستان خدمت کنم',
-        '3.رأفت اسلامی حاکم است اما اجازه ناامنی نمی‌دهیم',
-        '4.نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات',
-        '5.پیشرفت‌های ایران دوست و دشمن را متعجب کرده است',
-        '6.نیویورک‌تایمز ادعای ترامپ درباره ناسا و ایران را رد کرد',
-        '7.بایرن خواهان قرض‌گرفتن مدافع منچسترسیتی در زمستان',
-      ]
+        "1.جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+        "2.اگر یک روز از عمرم باقی باشد، آرزو دارم به مردم سیستان خدمت کنم",
+        "3.رأفت اسلامی حاکم است اما اجازه ناامنی نمی‌دهیم",
+        "4.نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات",
+        "5.پیشرفت‌های ایران دوست و دشمن را متعجب کرده است",
+        "6.نیویورک‌تایمز ادعای ترامپ درباره ناسا و ایران را رد کرد",
+        "7.بایرن خواهان قرض‌گرفتن مدافع منچسترسیتی در زمستان",
+      ],
       // currentTime: Date.now(),
     };
   },
@@ -155,4 +153,9 @@ export default {
 .lable {
   background-color: rgba(12, 14, 10, 0.1);
 }
+.overlay-search {
+  backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.69);
+}
+
 </style>

@@ -3,7 +3,7 @@
     <div class="flex w-full justify-between items-center">
       <span class="btn-tab bg-primary">پرخواننده ها</span>
       <span class="btn-tab bg-primary">پربحث ها</span>
-      <span class="btn-tab bg-primary">توصیه شده ها</span>
+      <!-- <span class="btn-tab bg-primary">توصیه شده ها</span> -->
     </div>
     <div class="relative z-0 overflow-y-scroll bg-white w-full h-[400px]">
       <div class="overflow-x-hidden pt-3">
@@ -51,7 +51,7 @@ export default {
   color: white;
   font-weight: bold;
   width: 135px;
-  font-size: 12px;
+  font-size: 14px;
   text-align: center;
 }
 .item-tab {

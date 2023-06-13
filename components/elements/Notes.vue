@@ -1,7 +1,7 @@
 <template>
   <div>
     <BaseTitle label="یادداشت ها" />
-    <div class="flex  flex-col bg-white">
+    <div class="flex  flex-col ">
       <template v-for="(item, index) in data" :key="index">
         <BaseHorizontalCard :info="item" avatar inverse />
       </template>
