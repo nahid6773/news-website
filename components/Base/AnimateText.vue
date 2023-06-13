@@ -7,25 +7,41 @@
         <h3 class="text-white font-bold relative text-center">{{ label }}</h3>
       </div>
       <div class="w-[85%] float-right">
-        <div class="overflow-hidden p-0" dir="rtl">
-          <div class="animate-leftToRight absolute ml-0 w-[100000px]">
-            <div class="flex mr-0 float-left">
-              <p
-                class="h-8 leading-5 font-bold"
-                v-for="(item, index) in items"
-                :key="index"
+        <div class="relative flex overflow-x-hidden">
+          <div class="animate-marquee whitespace-nowrap">
+            <span
+              class="h-8 leading-5 font-bold"
+              v-for="(item, index) in items"
+              :key="index"
+            >
+              <img
+                src="http://mellat.demo-qaleb.ir/wp-content/uploads/2020/02/favicon.png"
+                class="-ml-1 w-auto align-middle inline-block p-1 max-h-[35px]"
+              />
+              <span class="wp-dark-mode-ignore"
+                ><span class="p-2 inline-block font-normal text-xs">
+                  {{ item }}</span
+                ></span
               >
-                <img
-                  src="http://mellat.demo-qaleb.ir/wp-content/uploads/2020/02/favicon.png"
-                  class="-ml-1 w-auto align-middle inline-block p-1 max-h-[35px]"
-                />
-                <span class="wp-dark-mode-ignore"
-                  ><span class="p-2 inline-block font-normal text-xs">
-                    {{ item }}</span
-                  ></span
-                >
-              </p>
-            </div>
+            </span>
+          </div>
+
+          <div class="absolute top-0 animate-marquee2 whitespace-nowrap">
+            <span
+              class="h-8 leading-5 font-bold"
+              v-for="(item, index) in items"
+              :key="index"
+            >
+              <img
+                src="http://mellat.demo-qaleb.ir/wp-content/uploads/2020/02/favicon.png"
+                class="-ml-1 w-auto align-middle inline-block p-1 max-h-[35px]"
+              />
+              <span class="wp-dark-mode-ignore"
+                ><span class="p-2 inline-block font-normal text-xs">
+                  {{ item }}</span
+                ></span
+              >
+            </span>
           </div>
         </div>
       </div>
