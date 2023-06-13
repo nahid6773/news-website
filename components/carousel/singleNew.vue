@@ -22,7 +22,7 @@
         :modules="modules"
       >
         <swiper-slide v-for="(item, index) in items" :key="index">
-          <BaseHorizontalCard :info="item" class="my-4" />
+          <BaseHorizontalCard :info="item"  />
         </swiper-slide>
         <div
           class="absolute left-0 flex -mt-16 space-x-4 justify-end"

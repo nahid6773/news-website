@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-primary mb-6 pt-3">
+  <header class="bg-primary mb-4 pt-3">
     <!-- search overlay -->
     <div
       v-if="search"
@@ -10,7 +10,7 @@
         @click="search = false"
       />
       <div
-        class="relative mx-auto text-gray-600 lg:block hidden flex items-center justify-center"
+        class="relative mx-auto text-gray-600   flex items-center justify-center"
       >
         <input
           class="border-2 border-gray-300 bg-white h-14 pr-8 text-sm focus:outline-none text-sm focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-96 shadow-none bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
@@ -29,31 +29,31 @@
     <nav class="gridClass">
       <div class="relative flex justify-between items-center">
         <div class="flex flex-1 items-center">
-          <a href="/"
+          <NuxtLink to="/"
             ><img
               src="https://www.farsnews.ir/assets/images/white/farsnews.svg"
               alt="تاپ نیوز"
               class="h-10 mt-1"
-          /></a>
+          /></NuxtLink>
         </div>
         <BaseCurrentTime />
       </div>
       <div class="flex items-center justify-center">
         <div
-          class=" md:flex items-center justify-between mt-7 shadow-md text-center bg-gray-600 w-full"
+          class=" flex items-center justify-between py-3 mt-7 shadow-md text-center bg-gray-600 w-full"
         >
-          <div class=" hidden py-2 text-xs font-bold text-white lg:flex-grow lg:flex">
+          <div class="hidden  text-xs font-bold text-white lg:flex-grow laptop:flex">
             <nuxt-link
               v-for="(item, index) in itemMenu"
               :key="index"
               :to="item.link"
-              class="block mt-4 lg:inline-block lg:mt-0 px-4 py-2 hover:text-greenlight"
+              class="  lg:inline-block lg:mt-0 px-4  hover:text-greenlight"
               :class="index && 'border-r'"
             >
               {{ item.title }}
             </nuxt-link>
           </div>
-          <div class="flex items-center justify-between px-3 lg:w-40 w-full">
+          <div class=" flex items-center justify-between px-3 laptop:w-40 w-full">
             <IconMenu />
             <IconSearch @click="search = true" />
             <button
@@ -67,7 +67,7 @@
         </div>
       </div>
     </nav>
-    <!-- <BaseAnimateText :items="text" label="اخبار ویژه" /> -->
+    <BaseAnimateText :items="text" label="اخبار ویژه" />
   </header>
 </template>
 

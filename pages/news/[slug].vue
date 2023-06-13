@@ -1,7 +1,7 @@
 <template>
   <div class="gridClass">
-    <div class="py-6 flex items-start justify-between w-full flex-wrap">
-      <div class="w-full lg:w-6/12 xl:w-7/12 flex flex-col gap-y-5">
+    <div class="py-6 flex items-start justify-between w-full flex-wrap gap-y-5">
+      <div class="w-full laptop:w-6/12 laptop-m:w-7/12 flex flex-col gap-y-5">
         <div class="w-full bg-white flex flex-col gap-y-6 p-3">
           <div class="flex items-center justify-between w-full px-2">
             <span class="bg-gray-300 py-1 px-4 text-gray-500">خانه</span>
@@ -9,13 +9,13 @@
           </div>
           <div class="flex flex-col gap-y-3">
             <span class="text-sm text-gray-400">معاون وزیر راه و شهرسازی</span>
-            <h1 class="font-bold text-lg hover:text-yellow-600 cursor-pointer">
+            <h1 class="font-bold  hover:text-yellow-600 cursor-pointer mobile-s:text-sm laptop:text-lg">
               نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات
             </h1>
           </div>
           <hr />
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
+          <div class="flex items-center justify-between flex-wrap">
+            <div class="flex items-center   ">
               <span class="flex items-center ml-4">
                 <IconNote />کد خبر : 142
               </span>
@@ -23,7 +23,7 @@
                 ><IconDatePicker />۰۴ دی ۱۳۹۸ - ۱۲:۴۵
               </span>
             </div>
-            <div class="flex items-center">
+            <div class="flex items-center ">
               <IconEdit class="ml-4" />
               <IconEnvelope />
             </div>
@@ -67,14 +67,14 @@
             اشتغال برای ساکنان محدوده ایستگاه داشته باشد.
           </p>
           <hr />
-          <div class="flex items-center justify-between flex-wrap">
+          <div class="flex w-full items-center justify-between flex-wrap gap-y-3">
             <div class="text-xs hover:text-greenlight font-bold">
               لینک کوتاه : http://mellat.demo-qaleb.ir/?p=142
             </div>
             <div
-              class="flex flex-wrap items-center justify-center w-full lg:w-auto"
+              class="flex flex-wrap items-center justify-start laptop:justify-center w-full laptop:w-auto"
             >
-              <a target="_blank" class="flex items-center px-3 mt-1" href="#">
+              <a target="_blank" class="flex items-center px-1 laptop:px-3  mt-1" href="#">
                 <base-icon name="instagram" /> </a
               ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
                 <base-icon name="linkdin" /> </a
@@ -90,8 +90,8 @@
             </div>
           </div>
           <hr />
-          <div class="flex items-center justify-start w-full">
-            <span class="text-xs hover:text-greenlight mx-3 font-bold"
+          <div class="flex items-center justify-start w-full flex-wrap gap-y-3">
+            <span class="text-xs hover:text-greenlight mx-3 font-bold max-w-screen-sm:w-full"
               >نویسنده : مهدی دادگر</span
             >
             <span class="text-xs hover:text-greenlight mx-3 font-bold">
@@ -114,14 +114,14 @@
         <div class="w-full">
           <BaseTitle label="ثبت دیدگاه" />
           <div class="bg-white py-5 px-3 flex flex-col gap-y-5 w-full">
-            <div class="flex items-center justify-between w-full">
+            <div class="flex items-center justify-between w-full flex-wrap gap-y-5">
               <input
-                class="border-1 text-xs appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="border-1 text-xs appearance-none border rounded w-full laptop:w-52 laptop-m:w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
                 placeholder="نام ونام خانوادگی *"
               />
               <input
-                class="border-1 text-xs appearance-none border rounded w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                class="border-1 text-xs appearance-none border rounded w-full laptop:w-52 laptop-m:w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="email"
                 placeholder="پست الکترونیک *"
               />
@@ -138,12 +138,12 @@
           </div>
         </div>
       </div>
-      <div class="w-full flex flex-col gap-y-5 lg:w-56 xl:w-72">
+      <div class="w-full flex flex-col gap-y-5 laptop:w-64 laptop-m:w-72 ">
 
         <ElementsNotes :data="notes" />
         <ElementsLatestContent :data="content" />
       </div>
-      <div class="w-full lg:w-48">
+      <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
       </div>
     </div>

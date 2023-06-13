@@ -7,7 +7,7 @@
         v-for="(item, index) in similarText"
         :key="index"
       >
-        <span class="text-sm cursor-pointer font-bold hover:text-greenlight">{{
+        <span class="text-xs laptop:text-sm cursor-pointer font-bold hover:text-greenlight">{{
           item.title
         }}</span>
         <span class="text-xs text-white hover:text-greenlight"

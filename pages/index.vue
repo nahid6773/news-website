@@ -1,15 +1,28 @@
 <template>
-  <div class="gridClass mx-auto mt-5">
-    <div class="flex gap-6 my-4" v-if="news">
+  <div class="gridClass mx-auto mt-3">
+    <div class="w-full">
+      <img
+        src="https://static.tgju.org/advertisement/1200-70-1682767266.gif"
+        alt=""
+      />
+    </div>
+    <div class="flex items-center justify-between mt-3 flex-wrap gap-y-3">
+      <BaseCurrencyCard
+        v-for="(item, index) in currency"
+        :key="index"
+        :data="item"
+      />
+    </div>
+    <div class="flex gap-6 my-4 flex-wrap laptop:flex-nowrap" v-if="news">
       <!--  Column 1-->
-      <div class="w-[50%] flex flex-col gap-y-5">
+      <div class="w-full laptop:w-[50%] flex flex-col gap-y-5">
         <CarouselSingleNew :items="news" />
         <CarouselMultipleNews :data="news" class="my-4" />
         <ElementsLatestNews :data="news" class="my-4" />
         <ElementsTopNews :info="topNews" />
       </div>
       <!--  Column 2-->
-      <div class="w-[25%] flex flex-col gap-y-5">
+      <div class="w-full laptop:w-[25%] flex flex-col gap-y-5">
         <ElementsNewsTab :data="news" class="my-4" />
         <ElementsNotes :data="notes" class="my-4" />
         <CarouselComments :data="comments" class="my-4" />
@@ -20,7 +33,7 @@
         </div>
       </div>
       <!--  Column 3-->
-      <div class="w-[25%]">
+      <div class="w-full laptop:w-[22%]">
         <ElementsPublicity />
       </div>
     </div>
@@ -42,7 +55,43 @@ const { news, pending } = useNewsList();
 //     },
 //   })
 // );
-
+const currency = ref([
+  {
+    title: "سکه",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "18طلا",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "مثقال طلا",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "بورس",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "انس طلا",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "نفت برنت",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+  {
+    title: "دلار",
+    price: "291,010,000",
+    change: "9,782.6 (0.46%)",
+  },
+]);
 const topNews = ref({
   image:
     "https://media.farsnews.ir/Uploaded/Files/Images/1402/03/03/14020303000552_Test_PhotoN.jpg",

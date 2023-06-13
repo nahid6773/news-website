@@ -2,6 +2,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
+  important: true,
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -17,6 +18,7 @@ module.exports = {
       current: 'currentColor',
       'primary': '#005b3d',
       'greenlight':'#1c9541',
+      'gray-200':'#e5e7eb',
       'gray-300':'#d1d5db',
       'gray-400':'#9ca3af',
       'gray-500':'#4b5563',

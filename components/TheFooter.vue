@@ -1,8 +1,8 @@
 <template>
   <footer class="flex flex-col items-center">
-    <div class="h-14 flex items-center w-full bg-gray-500">
+    <div class="py-3 hidden laptop:flex items-center w-full bg-gray-500 gap-y-3">
       <div class="gridClass">
-        <div class="flex items-center justify-start">
+        <div class="flex items-center justify-start flex-wrap">
           <span class="mx-2 text-white text-sm cursor-pointer hover:text-greenlight">صفحه اصلی</span>
           <span class="mx-2 text-white text-sm cursor-pointer hover:text-greenlight">گالری عکس</span>
           <span class="mx-2 text-white text-sm cursor-pointer hover:text-greenlight">گالری فیلم</span>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="h-14 w-full bg-gray-600 flex items-center">
+    <div class="py-2 w-full bg-gray-600 hidden laptop:flex items-center gap-y-2">
       <div class="gridClass py-4">
         <div class="flex items-center justify-start flex-wrap">
           <span
