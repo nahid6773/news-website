@@ -1,5 +1,5 @@
 <template>
-  <div class="border-4 border-primary w-72 h-36 relative">
+  <div class="border-4  border-primary w-72 h-36 relative">
     <img
       class="w-full h-full"
       src="http://mellat.demo-qaleb.ir/wp-content/uploads/2020/02/1396042922424690511446704-450x320.jpg"
@@ -33,4 +33,6 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+
+</style>

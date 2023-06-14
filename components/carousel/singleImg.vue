@@ -1,82 +1,91 @@
 <template>
   <section>
-    <div class="max-w-[150px] mx-auto px-4 sm:px-6">
-      <div class="py-12 md:py-20">
-        <div class="carousel swiper-container max-w-sm mx-auto sm:max-w-none">
-          <div class="swiper-wrapper">
-            <!-- Carousel items -->
-            <div
-              v-for="(item, i) in data"
-              :key="i"
-              class="swiper-slide h-auto flex flex-col w-[500px]"
-            >
-              <!-- Image -->
-              <BaseImage :info="item" />
-            </div>
+    <swiper
+      class=""
+      :slides-per-view="1"
+      :centeredSlides="false"
+      :grabCursor="true"
+      :keyboard="{
+        enabled: true,
+      }"
+      :breakpoints="{}"
+      :scrollbar="true"
+      :navigation="{
+        nextEl: '.carousel1-next-single-card',
+        prevEl: '.carousel1-prev-single-card',
+      }"
+      :pagination="{
+        clickable: true,
+      }"
+      :loop="true"
+      :modules="modules"
+    >
+      <swiper-slide v-for="n in info" :key="n">
+        <div class="pb-2">
+          <div class="relative overflow-hidden rounded-lg">
+            <nuxt-link to="/" class="cursor-pointer block">
+              <figure>
+                <img
+                  class="w-full"
+                  :src="n.image"
+                  :alt="n.alt ? n.alt : n.text"
+                />
+              </figure>
+            </nuxt-link>
+            <h3 class="text-lg">
+              <nuxt-link to="/" class="cursor-pointer block">
+                <div
+                  class="absolute w-full text-white bottom-0 p-3"
+                  style="
+                    background: linear-gradient(
+                      to bottom,
+                      rgba(0, 0, 0, 0) 0%,
+                      rgba(0, 0, 0, 0.6) 30%,
+                      rgba(0, 0, 0, 0.8) 80%,
+                      rgba(0, 0, 0, 1) 100%
+                    );
+                  "
+                  v-text="n.text"
+                />
+              </nuxt-link>
+            </h3>
           </div>
         </div>
-
-        <!-- Arrows -->
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-          <div class="flex items-center justify-between mt-12 md:mt-16">
-            <button
-              class="carousel-prev relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500 dark:hover:bg-opacity-25 shadow-xl transition duration-150 ease-in-out"
-            >
-              <span class="sr-only">Previous</span>
-              <svg
-                class="w-4 h-4 fill-current text-white dark:text-gray-400 group-hover:text-white dark:group-hover:text-teal-500 transition duration-150 ease-in-out"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6.7 14.7l1.4-1.4L3.8 9H16V7H3.8l4.3-4.3-1.4-1.4L0 8z" />
-              </svg>
-            </button>
-            <button
-              class="carousel-next relative z-20 w-12 h-12 p-1 box-content flex items-center justify-center group bg-teal-500 hover:bg-teal-400 dark:bg-gray-800 dark:hover:bg-teal-500 dark:hover:bg-opacity-25 shadow-xl transition duration-150 ease-in-out"
-            >
-              <span class="sr-only">Next</span>
-              <svg
-                class="w-4 h-4 fill-current text-white dark:text-gray-400 group-hover:text-white dark:group-hover:text-teal-500 transition duration-150 ease-in-out"
-                viewBox="0 0 16 16"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M9.3 14.7l-1.4-1.4L12.2 9H0V7h12.2L7.9 2.7l1.4-1.4L16 8z" />
-              </svg>
-            </button>
-          </div>
-        </div>
+      </swiper-slide>
+      <div
+        class="absolute left-0 top-[60%] flex -mt-16 space-x-4 justify-end flex items-center justify-between w-full"
+        style="z-index: 999"
+      >
+        <button
+          class="carousel1-next-single-card hover:border-2 bg-primary text-white hover:border-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+        >
+          <IconArrowLeft class="rotate-180" />
+        </button>
+        <button
+          class="carousel1-prev-single-card hover:border-2 bg-primary text-white hover:border-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+        >
+          <IconArrowLeft />
+        </button>
       </div>
-    </div>
+    </swiper>
   </section>
 </template>
 
 <script setup>
-import { onMounted } from "vue";
-
-import Swiper, { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
-Swiper.use([Navigation]);
+import "swiper/css/navigation";
+import SwiperCore, { Keyboard, Scrollbar, Navigation } from "swiper";
 
-const props = defineProps({
-  data: {
-    type: Object,
+defineProps({
+  items: Object,
+  info: {
+    type: Array,
     required: true,
   },
 });
 
-onMounted(() => {
-  const carousel = new Swiper(".carousel", {
-    slidesPerView: 1,
-    grabCursor: true,
-    loop: false,
-    centeredSlides: false,
-    initialSlide: 0,
-    spaceBetween: 24,
-    watchSlidesProgress: true,
-    navigation: {
-      nextEl: ".carousel-next",
-      prevEl: ".carousel-prev",
-    },
-  });
-});
+SwiperCore.use([Navigation]);
+
+const modules = [Keyboard, Scrollbar];
 </script>
