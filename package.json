@@ -13,6 +13,7 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "autoprefixer": "^10.4.14",
     "chartjs": "^0.3.24",
     "postcss": "^8.4.23",

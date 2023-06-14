@@ -5,7 +5,8 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
-      
     },
   },
-})
+  // modules: ["@nuxtjs/axios"],
+  
+});

@@ -1,5 +1,5 @@
 <template>
-  <div class="gridClass mx-auto mt-3">
+  <div class="gridClass mx-auto my-3">
     <div class="w-full">
       <img
         src="https://static.tgju.org/advertisement/1200-70-1682767266.gif"
@@ -37,6 +37,7 @@
         <ElementsPublicity />
       </div>
     </div>
+    <CarouselNews/>
   </div>
 </template>
 
@@ -60,6 +61,7 @@ const currency = ref([
     title: "سکه",
     price: "291,010,000",
     change: "9,782.6 (0.46%)",
+    
   },
   {
     title: "18طلا",

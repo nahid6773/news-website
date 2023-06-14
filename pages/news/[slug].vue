@@ -9,13 +9,15 @@
           </div>
           <div class="flex flex-col gap-y-3">
             <span class="text-sm text-gray-400">معاون وزیر راه و شهرسازی</span>
-            <h1 class="font-bold  hover:text-yellow-600 cursor-pointer mobile-s:text-sm laptop:text-lg">
+            <h1
+              class="font-bold hover:text-yellow-600 cursor-pointer mobile-s:text-sm laptop:text-lg"
+            >
               نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات
             </h1>
           </div>
           <hr />
           <div class="flex items-center justify-between flex-wrap">
-            <div class="flex items-center   ">
+            <div class="flex items-center">
               <span class="flex items-center ml-4">
                 <IconNote />کد خبر : 142
               </span>
@@ -23,7 +25,7 @@
                 ><IconDatePicker />۰۴ دی ۱۳۹۸ - ۱۲:۴۵
               </span>
             </div>
-            <div class="flex items-center ">
+            <div class="flex items-center">
               <IconEdit class="ml-4" />
               <IconEnvelope />
             </div>
@@ -67,14 +69,20 @@
             اشتغال برای ساکنان محدوده ایستگاه داشته باشد.
           </p>
           <hr />
-          <div class="flex w-full items-center justify-between flex-wrap gap-y-3">
+          <div
+            class="flex w-full items-center justify-between flex-wrap gap-y-3"
+          >
             <div class="text-xs hover:text-greenlight font-bold">
               لینک کوتاه : http://mellat.demo-qaleb.ir/?p=142
             </div>
             <div
               class="flex flex-wrap items-center justify-start laptop:justify-center w-full laptop:w-auto"
             >
-              <a target="_blank" class="flex items-center px-1 laptop:px-3  mt-1" href="#">
+              <a
+                target="_blank"
+                class="flex items-center px-1 laptop:px-3 mt-1"
+                href="#"
+              >
                 <base-icon name="instagram" /> </a
               ><a target="_blank" class="flex items-center px-3 mt-1" href="#">
                 <base-icon name="linkdin" /> </a
@@ -91,7 +99,8 @@
           </div>
           <hr />
           <div class="flex items-center justify-start w-full flex-wrap gap-y-3">
-            <span class="text-xs hover:text-greenlight mx-3 font-bold max-w-screen-sm:w-full"
+            <span
+              class="text-xs hover:text-greenlight mx-3 font-bold max-w-screen-sm:w-full"
               >نویسنده : مهدی دادگر</span
             >
             <span class="text-xs hover:text-greenlight mx-3 font-bold">
@@ -114,7 +123,9 @@
         <div class="w-full">
           <BaseTitle label="ثبت دیدگاه" />
           <div class="bg-white py-5 px-3 flex flex-col gap-y-5 w-full">
-            <div class="flex items-center justify-between w-full flex-wrap gap-y-5">
+            <div
+              class="flex items-center justify-between w-full flex-wrap gap-y-5"
+            >
               <input
                 class="border-1 text-xs appearance-none border rounded w-full laptop:w-52 laptop-m:w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 type="text"
@@ -138,8 +149,7 @@
           </div>
         </div>
       </div>
-      <div class="w-full flex flex-col gap-y-5 laptop:w-64 laptop-m:w-72 ">
-
+      <div class="w-full flex flex-col gap-y-5 laptop:w-64 laptop-m:w-72">
         <ElementsNotes :data="notes" />
         <ElementsLatestContent :data="content" />
       </div>
@@ -152,6 +162,7 @@
 
 <script setup>
 const route = useRoute();
+import { log } from "console";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
 
@@ -261,7 +272,7 @@ const content = ref([
     img: "https://picsum.photos/300/300",
     date: "04 دی 1401 12:45",
   },
-    {
+  {
     id: 6,
     title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
     img: "https://picsum.photos/300/300",
@@ -285,8 +296,8 @@ const content = ref([
     img: "https://picsum.photos/300/300",
     date: "04 دی 1401 12:45",
   },
- 
 ]);
+
 </script>
 
 <style scoped></style>
