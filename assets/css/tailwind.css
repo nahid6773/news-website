@@ -17,7 +17,7 @@ body {
 
 /* base class */
 .news-title {
-  @apply text-base font-semibold text-gray-800 leading-6 hover:text-lime-600
+  @apply  font-semibold text-gray-800 leading-6 hover:text-lime-600
 }
 .news-subtitle {
   @apply text-xs text-gray-400

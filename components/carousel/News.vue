@@ -8,6 +8,10 @@
       :keyboard="{
         enabled: true,
       }"
+      :autoplay="{
+        delay: 4000,
+        disableOnInteraction: false,
+      }"
       :breakpoints="{}"
       :scrollbar="true"
       :navigation="{
@@ -20,44 +24,36 @@
       :loop="true"
       :modules="modules"
     >
-      <swiper-slide>
-        <ElementsSlide />
+      <swiper-slide v-for="(item, index) in data" :key="index">
+        <div class="border-4 border-primary w-72 h-40 relative">
+          <img
+            class="w-full h-full"
+            src="https://picsum.photos/300/300"
+            alt=""
+          />
+          <div class="absolute top-[10%] flex flex-col gap-y-4 pl-5 pr-2">
+            <span
+              class="bg-primary text-white font-bold text-xs px-3 py-1 text-center w-14"
+              >6دی</span
+            >
+            <h3 class="font-bold text-sm text-white">
+              <NuxtLink to="/">{{ item.title }}</NuxtLink>
+            </h3>
+          </div>
+        </div>
       </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
-      <swiper-slide>
-        <ElementsSlide />
-      </swiper-slide>
+
       <div
-        class="absolute flex -mt-16 space-x-4 justify-between w-full items-center"
+        class="absolute flex -mt-16 justify-between w-full items-center"
         style="z-index: 999"
       >
         <button
-          class="carousel1-next-single-card border-2 border-gray-200 text-gray-400 hover:border-gray-400 hover:text-white hover:bg-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-next-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft class="rotate-180" />
         </button>
         <button
-          class="carousel1-prev-single-card border-2 border-gray-200 text-gray-400 hover:border-gray-400 hover:text-white hover:bg-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-prev-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft />
         </button>
@@ -70,17 +66,18 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
-import SwiperCore, { Keyboard, Scrollbar, Navigation } from "swiper";
+import SwiperCore, { Autoplay, Keyboard, Scrollbar, Navigation } from "swiper";
 
 defineProps({
-  items: Object,
+  data: {
+    type: Array,
+    required: true,
+  },
 });
 
 SwiperCore.use([Navigation]);
 
-const modules = [Keyboard, Scrollbar];
+const modules = [Autoplay, Keyboard, Scrollbar];
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

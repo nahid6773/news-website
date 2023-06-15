@@ -15,10 +15,10 @@
     </div>
     <div class="flex gap-6 my-4 flex-wrap laptop:flex-nowrap" v-if="news">
       <!--  Column 1-->
-      <div class="w-full laptop:w-[50%] flex flex-col gap-y-5">
+      <div class="w-full laptop:w-[53%] flex flex-col gap-y-5">
         <CarouselSingleNew :items="news" />
-        <CarouselMultipleNews :data="news" class="my-4" />
-        <ElementsLatestNews :data="news" class="my-4" />
+        <CarouselMultipleNews :data="news" class="my-2" />
+        <ElementsLatestNews :data="news" />
         <CarouselSingleImg :info="topNews" />
       </div>
       <!--  Column 2-->
@@ -31,13 +31,18 @@
           <BaseTitle label="اخبار مهم" />
           <BaseList :data="news" />
         </div>
+        <div>
+          <BaseTitle label="آخرین اخبار" />
+
+          <ElementsLatestContent :data="content" />
+        </div>
       </div>
       <!--  Column 3-->
       <div class="w-full laptop:w-[22%]">
         <ElementsPublicity />
       </div>
     </div>
-    <CarouselNews />
+    <CarouselNews :data="news" />
   </div>
 </template>
 
@@ -170,6 +175,86 @@ const comments = ref([
   {
     text: "به گفته محققان، با انتقال بخشی از بار رشد محصولات زراعی جهان به مناطق شهری و مناطق دیگر می‌توان زمین را از وضع",
     title: "هانیه میرزاپور",
+  },
+]);
+
+const content = ref([
+  {
+    id: 1,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 2,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 3,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 4,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 5,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 6,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 7,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+]);
+const dataSlide = ref([
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
+  },
+  {
+    title: "",
+    date: "",
+    img: "",
   },
 ]);
 </script>

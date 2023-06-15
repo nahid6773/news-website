@@ -151,7 +151,10 @@
       </div>
       <div class="w-full flex flex-col gap-y-5 laptop:w-64 laptop-m:w-72">
         <ElementsNotes :data="notes" />
-        <ElementsLatestContent :data="content" />
+        <div>
+          <BaseTitle label="آخرین مطالب" />
+          <ElementsLatestContent :data="content" />
+        </div>
       </div>
       <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
@@ -162,7 +165,6 @@
 
 <script setup>
 const route = useRoute();
-import { log } from "console";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
 
@@ -297,7 +299,6 @@ const content = ref([
     date: "04 دی 1401 12:45",
   },
 ]);
-
 </script>
 
 <style scoped></style>

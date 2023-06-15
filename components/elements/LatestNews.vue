@@ -2,7 +2,7 @@
   <div>
     <BaseTitle label="آخرین مطالب" />
     <div v-for="item in 8" :key="item">
-      <BaseHorizontalCard :info="data[item]" show-date />
+      <BaseHorizontalCard :info="data[item]" show-date heightLatest />
     </div>
   </div>
 </template>

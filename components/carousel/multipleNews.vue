@@ -1,15 +1,64 @@
 <template>
-  <div>
+  <section>
     <BaseTitle label="آخرین مطالب" />
-    <div class="flex relative">
-    <div v-for="i in 3" :key="i" class="w-1/3 mx-1 bg-white">
-      <BaseVerticalCard :info="data[i]" />
-    </div>
-  </div>
-  </div>
-</template>
+    <swiper
+      class="m-0"
+      :slides-per-view="3"
+      :centeredSlides="false"
+      :grabCursor="true"
+      :keyboard="{
+        enabled: true,
+      }"
+      :autoplay="{
+        delay: 4000,
+        disableOnInteraction: false,
+      }"
+      :breakpoints="{}"
+      :scrollbar="true"
+      :navigation="{
+        nextEl: '.carousel1-next-single-card',
+        prevEl: '.carousel1-prev-single-card',
+      }"
+      :pagination="{
+        clickable: true,
+      }"
+      :loop="true"
+      :modules="modules"
+    >
+      <swiper-slide v-for="(item, index) in data" :key="index">
+        <div class="flex relative">
+          <div class=" mx-1">
+            <BaseHorizontalCard :info="item" multipleSlider />
+          </div>
+        </div>
+      </swiper-slide>
 
+      <div
+        class="absolute flex  top-[30%] left-0.5 gap-y-1 justify-between w-full"
+        style="z-index: 999"
+      >
+        <button
+          class="carousel1-next-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
+        >
+          <IconArrowLeft class="rotate-180" />
+        </button>
+        <button
+          class="carousel1-prev-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
+        >
+          <IconArrowLeft />
+        </button>
+      </div>
+    </swiper>
+  </section>
+</template>
 <script setup>
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/navigation";
+import SwiperCore, { Autoplay, Keyboard, Scrollbar, Navigation } from "swiper";
+SwiperCore.use([Navigation]);
+
+const modules = [Autoplay, Keyboard, Scrollbar];
 const props = defineProps({
   data: {
     type: Object,
