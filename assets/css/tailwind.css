@@ -11,7 +11,7 @@ body {
   @apply overflow-y-scroll;
   direction: rtl;
   font-family: "siteFont", serif !important;
-  @apply bg-[#f1f1f1] text-justify;
+  @apply bg-[#f1f1f1] dark:bg-[#2a2c2c] text-justify;
   @apply text-gray-600;
 }
 
@@ -54,13 +54,24 @@ body {
 .low {
   @apply text-red-500
 }
-
 .low::before {
 	content: '\2039';
 	display: inline-block;
-	left: 0.15em;
+	left: 10px;
 	position: relative;
 	transform: rotate(90deg);
+}
+
+.high {
+  @apply text-green-500
+}
+
+.high::before {
+	content: '\2039';
+	display: inline-block;
+	left: 10px;
+	position: relative;
+	transform: rotate(-90deg);
 }
 
 /* scrollbar */
