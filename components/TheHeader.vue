@@ -56,12 +56,13 @@
           <div class=" flex items-center justify-between px-3 laptop:w-40 w-full">
             <IconMenu />
             <IconSearch @click="search = true" />
-            <button
+            <!-- <button
               class="flex items-center justify-between bg-gray-500 py-1 px-3 rounded-full"
             >
               <IconLight  />
               <IconDark />
-            </button>
+            </button> -->
+            <ElementsThemeChanger />
             
           </div>
         </div>
