@@ -47,7 +47,10 @@
     <!-- row 4 -->
     <!-- <CarouselNews :data="news" /> -->
     <!-- row 5 -->
+    <div class="w-full">
+    <BaseTitle label="سایر اخبار مهم" />
     <ElementsLastCard :data="lastCard" />
+    </div>
     <!-- row 6 -->
     <!-- <div class="flex items-start justify-between mt-10 w-full">
       <div>

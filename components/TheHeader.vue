@@ -87,7 +87,7 @@ export default {
         },
         {
           title: "اقتصاد",
-          link: "#",
+          link: "/Economic",
         },
         {
           title: " بین الملل",

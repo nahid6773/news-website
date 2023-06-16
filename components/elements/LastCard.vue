@@ -1,8 +1,7 @@
 <template>
-  <section class="mt-5">
-    <BaseTitle label="سایر اخبار مهم" />
+  <section class="">
     <div
-      class="w-full flex items-center justify-between my-8 flex-wrap laptop:nowrap gap-y-3"
+      class="w-full flex items-center justify-between my-7 flex-wrap laptop:nowrap gap-y-3"
       :class="item.reverse ? 'reverse' : ''"
       v-for="(item, index) in data"
       :key="index"
