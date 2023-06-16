@@ -162,7 +162,6 @@
 
 <script setup>
 const route = useRoute();
-import { log } from "console";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
 

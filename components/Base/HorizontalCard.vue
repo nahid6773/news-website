@@ -15,7 +15,7 @@
         <!-- avatar -->
         <div
           v-if="avatar"
-          class="block overflow-hidden float-right w-[30%] bg-[#fafafa] my-auto mx-0"
+          class="block float-right w-[30%] bg-[#fafafa] my-auto mx-0"
         >
           <BaseAvatar />
         </div>

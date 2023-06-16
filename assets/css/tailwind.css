@@ -51,6 +51,18 @@ body {
   @apply bg-blue-400;
 } */
 
+.low {
+  @apply text-red-500
+}
+
+.low::before {
+	content: '\2039';
+	display: inline-block;
+	left: 0.15em;
+	position: relative;
+	transform: rotate(90deg);
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -73,6 +85,8 @@ body {
   ;
   border-radius: 10px;
 }
+
+
 .gridClass {
   width: 290px;
   margin: 0 auto;
