@@ -17,6 +17,7 @@ module.exports = {
       current: 'currentColor',
       'primary': '#005b3d',
       'warning': '#eec62a',
+      'success': '#005b3d',
       'greenlight':'#1c9541',
       'gray-200':'#e5e7eb',
       'gray-300':'#d1d5db',

@@ -1,8 +1,8 @@
 <template>
-  <div class="w-full bg-white">
-    <div class="mb-6">
+  <div class="w-full bg-white overflow-y-scroll h-96">
+    <div class="">
       <ul class="post-number">
-        <li v-for="n in 5" :key="n" class="border-b border-gray-100 hover:bg-gray-100 hover:text-lime-600">
+        <li v-for="n in 8" :key="n" class="border-b border-gray-100 hover:bg-gray-100 hover:text-lime-600">
           <nuxt-link
             :to="'/news/' + data[n].title"
             class="px-6 py-3 flex flex-row items-center text-xs leading-6 font-bold"

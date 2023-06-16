@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col bg-white gap-y-3">
     <div class="flex w-full justify-between items-center">
-      <span class="btn-tab bg-primary cursor-pointer">پرخواننده ها</span>
-      <span class="btn-tab bg-primary cursor-pointer">پربحث ها</span>
-      <!-- <span class="btn-tab bg-primary">توصیه شده ها</span> -->
+      <span class="btn-tab bg-success cursor-pointer">پرخواننده ها</span>
+      <span class="btn-tab bg-success cursor-pointer">پربحث ها</span>
+      <!-- <span class="btn-tab bg-success">توصیه شده ها</span> -->
     </div>
-    <div class="relative z-0 overflow-y-scroll bg-white w-full h-[400px]">
+    <div class="relative z-0 overflow-y-scroll bg-white w-full h-[708px]">
       <div class="overflow-x-hidden pt-3">
         <ul class="list-disc list-inside w-full" v-if="data">
           <li
@@ -50,7 +50,7 @@ export default {
   padding: 5px 16px;
   color: white;
   font-weight: bold;
-  width: 135px;
+  width: 150px;
   font-size: 14px;
   text-align: center;
 }

@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="relative py-4">
+    <div class="relative ">
       <swiper
         class=""
         :slides-per-view="1"
@@ -9,6 +9,10 @@
         :keyboard="{
           enabled: true,
         }"
+          :autoplay="{
+      delay: 3000,
+      disableOnInteraction: false,
+    }"
         :breakpoints="{}"
         :scrollbar="true"
         :navigation="{
@@ -22,7 +26,7 @@
         :modules="modules"
       >
         <swiper-slide v-for="(item, index) in items" :key="index">
-          <BaseHorizontalCard :info="item"  />
+          <BaseHorizontalCard :info="item" isHeight isWidthImg />
         </swiper-slide>
         <div
           class="absolute left-0 flex -mt-16 space-x-4 justify-end"
@@ -48,7 +52,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
-import SwiperCore, { Keyboard, Scrollbar, Navigation } from "swiper";
+import SwiperCore, {Autoplay, Keyboard, Scrollbar, Navigation } from "swiper";
 
 defineProps({
   items: Object,
@@ -56,5 +60,5 @@ defineProps({
 
 SwiperCore.use([Navigation]);
 
-const modules = [Keyboard, Scrollbar];
+const modules = [Autoplay,Keyboard, Scrollbar];
 </script>

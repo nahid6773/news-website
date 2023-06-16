@@ -1,7 +1,8 @@
 <template>
-  <div class="gridClass mx-auto my-3">
+  <div class="gridClass mx-auto my-3" v-if="news">
     <div class="w-full">
       <img
+        class="w-full"
         src="https://static.tgju.org/advertisement/1200-70-1682767266.gif"
         alt=""
       />
@@ -13,49 +14,53 @@
         :data="item"
       />
     </div>
-    <div class="flex gap-6 my-4 flex-wrap laptop:flex-nowrap" v-if="news">
-      <!--  Column 1-->
-      <div class="w-full laptop:w-[50%] flex flex-col gap-y-5">
-        <CarouselSingleNew :items="news" />
-        <CarouselMultipleNews :data="news" class="my-4" />
-        <ElementsLatestNews :data="news" class="my-4" />
-        <CarouselSingleImg :info="topNews" />
-      </div>
-      <!--  Column 2-->
-      <div class="w-full laptop:w-[25%] flex flex-col gap-y-5">
-        <ElementsNewsTab :data="news" class="my-4" />
-        <ElementsNotes :data="notes" class="my-4" />
-        <CarouselComments :data="comments" class="my-4" />
-        <CarouselSingleImg :info="images" />
-        <div>
-          <BaseTitle label="اخبار مهم" />
-          <BaseList :data="news" />
-        </div>
-      </div>
-      <!--  Column 3-->
+    <!-- row 1 -->
+    <div
+      class="flex items-start justify-between mt-10 w-full laptop:h-80  flex-wrap laptop:nowrap gap-y-5 "
+    >
+      <CarouselSingleNew :items="news" class="w-full laptop:w-[52%] h-full" />
+      <ElementsChosenCard :data="news" class="w-full laptop:w-[22%] h-full" />
+      <ElementsNotes :data="notes" class="w-full laptop:w-[24%] h-full" />
+    </div>
+    <!-- row 2 -->
+    <div
+      class="flex items-start justify-between mt-10 w-full flex-wrap laptop:nowrap gap-y-5"
+    >
+      <ElementsLatestNews :data="news" class="w-full laptop:w-[52%]" />
+      <ElementsNewsTab :data="news" class="w-full laptop:w-[22%]" />
+      <ElementsPublicity class="w-full laptop:w-[24%]" />
+    </div>
+    <!-- row 3 -->
+    <div
+      class="flex items-start justify-between mt-10 w-full flex-wrap laptop:nowrap gap-y-5"
+    >
+      <CarouselSingleImg :info="topNews" class="w-full laptop:w-[52%]" />
       <div class="w-full laptop:w-[22%]">
-        <ElementsPublicity />
+        <BaseTitle label="اخبار مهم" />
+        <BaseList :data="news" />
+      </div>
+      <div class="w-full laptop:w-[24%] flex flex-col items-center gap-y-2">
+        <CarouselComments :data="comments" class="w-full" />
+        <CarouselSingleImg :info="images" class="w-full" />
       </div>
     </div>
-    <CarouselNews />
+    <!-- row 4 -->
+    <!-- <CarouselNews :data="news" /> -->
+    <!-- row 5 -->
+    <ElementsLastCard :data="lastCard" />
+    <!-- row 6 -->
+    <!-- <div class="flex items-start justify-between mt-10 w-full">
+      <div>
+        <BaseTitle label="آخرین اخبار" />
+        <ElementsLatestContent :data="content" />
+      </div>
+    </div> -->
   </div>
 </template>
 
 <script setup>
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
-
-// const { data: news, error } = await useAsyncData("news", () =>
-//   $fetch(`News/NewsByDate`, {
-//     method: "GET",
-//     baseURL: "http://newspodium.sakku-khatam.ir",
-//     params: {
-//       NewsAgencyId: 20,
-//       Page: 1,
-//       date: '2023 05 18'
-//     },
-//   })
-// );
 const currency = ref([
   {
     title: "سکه",
@@ -170,6 +175,59 @@ const comments = ref([
   {
     text: "به گفته محققان، با انتقال بخشی از بار رشد محصولات زراعی جهان به مناطق شهری و مناطق دیگر می‌توان زمین را از وضع",
     title: "هانیه میرزاپور",
+  },
+]);
+
+const content = ref([
+  {
+    id: 1,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 2,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 3,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 4,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 5,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 6,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+  {
+    id: 7,
+    title: "جمهوری اسلامی ایران به خود خواهد بالید و افتخار خواهد کرد",
+    date: "04 دی 1401 12:45",
+  },
+]);
+const lastCard = ref([
+  {
+    title: "",
+    date: "",
+    img: "https://media.farsnews.ir/Uploaded/Files/Images/1402/03/24/14020324000811_Test_PhotoN.jpg",
+    reverse: true,
+  },
+
+  {
+    title: "",
+    date: "",
+    img: "https://media.farsnews.ir/Uploaded/Files/Images/1402/03/24/14020324000272_Test_PhotoN.jpg",
+    reverse: false,
   },
 ]);
 </script>

@@ -3,7 +3,7 @@
     <BaseTitle label="یادداشت ها" />
     <div class="flex  flex-col ">
       <template v-for="(item, index) in data" :key="index">
-        <BaseHorizontalCard :info="item" avatar inverse />
+        <BaseHorizontalCard :info="item" avatar inverse isFont/>
       </template>
     </div>
   </div>

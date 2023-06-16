@@ -8,6 +8,7 @@
       :keyboard="{
         enabled: true,
       }"
+      
       :breakpoints="{}"
       :scrollbar="true"
       :navigation="{
@@ -32,7 +33,7 @@
                 />
               </figure>
             </nuxt-link>
-            <h3 class="text-lg">
+            <h3 class="text-xs tablet:text-sm laptop:text-lg">
               <nuxt-link to="/" class="cursor-pointer block">
                 <div
                   class="absolute w-full text-white bottom-0 p-3"
@@ -53,16 +54,16 @@
         </div>
       </swiper-slide>
       <div
-        class="absolute left-0 top-[60%] flex -mt-16 space-x-4 justify-end flex items-center justify-between w-full"
+        class="absolute  top-[50%] flex  space-x-4 justify-end flex items-center justify-between w-full"
         style="z-index: 999"
       >
         <button
-          class="carousel1-next-single-card hover:border-2 bg-primary text-white hover:border-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-next-single-card hover:border-2 bg-success text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft class="rotate-180" />
         </button>
         <button
-          class="carousel1-prev-single-card hover:border-2 bg-primary text-white hover:border-greenlight w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-prev-single-card hover:border-2 bg-success text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft />
         </button>
@@ -75,7 +76,7 @@
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/navigation";
-import SwiperCore, { Keyboard, Scrollbar, Navigation } from "swiper";
+import SwiperCore, { Autoplay,Keyboard, Scrollbar, Navigation } from "swiper";
 
 defineProps({
   items: Object,
@@ -87,5 +88,5 @@ defineProps({
 
 SwiperCore.use([Navigation]);
 
-const modules = [Keyboard, Scrollbar];
+const modules = [Keyboard, Scrollbar,Autoplay];
 </script>

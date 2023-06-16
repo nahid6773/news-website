@@ -142,7 +142,7 @@
               class="h-32 text-xs border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             ></textarea>
             <div class="w-56">
-              <button class="px-3 py-2 text-white bg-primary text-sm">
+              <button class="px-3 py-2 text-white bg-success text-sm">
                 ثبت دیدگاه
               </button>
             </div>
@@ -151,7 +151,10 @@
       </div>
       <div class="w-full flex flex-col gap-y-5 laptop:w-64 laptop-m:w-72">
         <ElementsNotes :data="notes" />
-        <ElementsLatestContent :data="content" />
+        <div>
+          <BaseTitle label="آخرین مطالب" />
+          <ElementsLatestContent :data="content" />
+        </div>
       </div>
       <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
@@ -296,7 +299,6 @@ const content = ref([
     date: "04 دی 1401 12:45",
   },
 ]);
-
 </script>
 
 <style scoped></style>
