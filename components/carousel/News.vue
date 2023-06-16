@@ -8,10 +8,7 @@
       :keyboard="{
         enabled: true,
       }"
-      :autoplay="{
-        delay: 4000,
-        disableOnInteraction: false,
-      }"
+      
       :breakpoints="{}"
       :scrollbar="true"
       :navigation="{
@@ -25,7 +22,7 @@
       :modules="modules"
     >
       <swiper-slide v-for="(item, index) in data" :key="index">
-        <div class="border-4 border-primary w-72 h-40 relative">
+        <div class="border-4 border-success w-72 h-40 relative">
           <img
             class="w-full h-full"
             src="https://picsum.photos/300/300"
@@ -33,7 +30,7 @@
           />
           <div class="absolute top-[10%] flex flex-col gap-y-4 pl-5 pr-2">
             <span
-              class="bg-primary text-white font-bold text-xs px-3 py-1 text-center w-14"
+              class="bg-success text-white font-bold text-xs px-3 py-1 text-center w-14"
               >6دی</span
             >
             <h3 class="font-bold text-sm text-white">
@@ -48,12 +45,12 @@
         style="z-index: 999"
       >
         <button
-          class="carousel1-next-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-next-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-success w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft class="rotate-180" />
         </button>
         <button
-          class="carousel1-prev-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-primary w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-prev-single-card border-2 hover:border-gray-200 text-white hover:bg-yellow-600 bg-success w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft />
         </button>

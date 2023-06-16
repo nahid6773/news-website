@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-white p-2 flex flex-col">
+    <div class="bg-white p-2 flex flex-col overflow-y-scroll h-80">
       <div class="flex flex-col" v-for="item in data" :key="item.id">
         <div class="flex justify-between py-3 px-2">
           <template v-if="item.img">

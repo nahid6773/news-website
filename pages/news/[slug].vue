@@ -142,7 +142,7 @@
               class="h-32 text-xs border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
             ></textarea>
             <div class="w-56">
-              <button class="px-3 py-2 text-white bg-primary text-sm">
+              <button class="px-3 py-2 text-white bg-success text-sm">
                 ثبت دیدگاه
               </button>
             </div>

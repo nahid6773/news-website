@@ -3,9 +3,9 @@
     <section
       class=""
       :class="[
-        isHeight ? 'h-72' : '',
+        isHeight ? 'h-80' : '',
         !isHeight ? 'border-b-2 mb-2' : '',
-        heightLatest ? 'h-44' : '',
+        heightLatest ? 'h-36' : '',
       ]"
     >
       <div
@@ -15,10 +15,10 @@
         <!-- showDate -->
         <div
           v-if="showDate"
-          class="border-2 border-primary w-12 h-12 text-center leading-3 absolute -mr-2 mt-2 bg-white p-1 hover:bg-primary hover:text-white"
+          class="border-2 border-success flex items-center flex-col w-10 laptop:w-12 h-10 laptop:h-12 text-center leading-3 absolute -mr-2 mt-2 bg-white p-1 hover:bg-success hover:text-white"
         >
-          <span class="text-sm w-10 block">10</span
-          ><b class="w-10 block text-[10px]">اسفند</b>
+          <span class="text-xs w-10 block">10</span
+          ><b class="w-10 block text-[8px]">اسفند</b>
         </div>
         <!-- avatar -->
         <div
@@ -46,8 +46,8 @@
           <h2>
             <NuxtLink
               :to="'/news/' + info.title"
-              class="news-title mb-1 !leading-10 text-sm"
-              :class="!info.text ? '!text-xs !leading-4' : ''"
+              class="news-title mb-1  leading-3 laptop:leading-5 text-sm"
+              :class="[!info.text ? 'text-xs !leading-4' : '',isFont?'text-[10px]':'']"
             >
               {{ info.title }}
             </NuxtLink>
@@ -57,7 +57,7 @@
           </div>
           <template v-if="!multipleSlider">
 
-          <p class="news-text">
+          <p class="news-text ">
             {{ info.text }}
           </p>
           </template>
@@ -81,5 +81,6 @@ const props = defineProps({
   isWidthImg: Boolean,
   heightLatest: Boolean,
   multipleSlider: Boolean,
+  isFont:Boolean
 });
 </script>

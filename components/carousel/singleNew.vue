@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="relative py-4">
+    <div class="relative ">
       <swiper
         class=""
         :slides-per-view="1"
