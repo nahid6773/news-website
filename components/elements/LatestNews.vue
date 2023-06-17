@@ -6,29 +6,6 @@
     </div>
   </div>
 </template>
-
-<!--<script>
-
-export default {
-  name: "latestNews",
-
-  data() {
-    return {};
-  },
-  props: {
-    data: Array,
-  },
-
-  mounted() {},
-
-  methods: {},
-};
-
-
-</script>
-
-<style scoped></style> -->
-
 <script setup>
 const props = defineProps({
   data: {

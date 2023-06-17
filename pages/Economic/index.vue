@@ -8,8 +8,13 @@
       />
     </div>
     <ElementsLastCard :data="lastCard" />
-    <div class="flex items-start justify-between flex-wrap laptop:nowrap">
-      <ElementsLatestNews :data="news"/>
+    <div class="flex w-full items-start justify-between">
+      <div class="w-[73%]">
+        <ElementsLatestNews :data="news"  />
+      </div>
+      <div class="w-[25%]">
+        <ElementsPublicity />
+      </div>
     </div>
   </div>
 </template>
