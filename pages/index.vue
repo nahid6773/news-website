@@ -16,7 +16,7 @@
     </div>
     <!-- row 1 -->
     <div
-      class="flex items-start justify-between mt-10 w-full laptop:h-80  flex-wrap laptop:nowrap gap-y-5 "
+      class="flex items-start justify-between mt-10 w-full laptop:h-80 flex-wrap laptop:nowrap gap-y-5"
     >
       <CarouselSingleNew :items="news" class="w-full laptop:w-[52%] h-full" />
       <ElementsChosenCard :data="news" class="w-full laptop:w-[22%] h-full" />
@@ -48,9 +48,10 @@
     <!-- <CarouselNews :data="news" /> -->
     <!-- row 5 -->
     <div class="w-full">
-    <BaseTitle label="سایر اخبار مهم" />
-    <ElementsLastCard :data="lastCard" />
+      <BaseTitle label="سایر اخبار مهم" />
+      <ElementsLastCard :data="lastCard" />
     </div>
+    <button @click="Currency">clicked</button>
     <!-- row 6 -->
     <!-- <div class="flex items-start justify-between mt-10 w-full">
       <div>
@@ -62,8 +63,16 @@
 </template>
 
 <script setup>
+import apiList from "../composables/apiList";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
+import { ref } from "vue";
+
+const data = ref(null);
+const error = ref(null);
+
+
+
 const currency = ref([
   {
     title: "سکه",
