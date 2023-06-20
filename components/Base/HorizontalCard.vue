@@ -6,10 +6,14 @@
         isHeight ? 'h-80' : '',
         !isHeight ? 'border-b-2 mb-2' : '',
         heightLatest ? 'h-36' : '',
+        isHeightComment ? 'h-56' : '',
       ]"
     >
       <div
-        :class="multipleSlider ? 'flex-col' : ''"
+        :class="[
+          multipleSlider ? 'flex-col' : '',
+          isHeightComment ? 'flex items-center' : '',
+        ]"
         class="w-full flex relative bg-white shadow-lg before:table before:content[''] h-full"
       >
         <!-- showDate -->
@@ -46,8 +50,11 @@
           <h2>
             <NuxtLink
               :to="'/news/' + info.title"
-              class="news-title mb-1  leading-3 laptop:leading-5 text-sm"
-              :class="[!info.text ? 'text-xs !leading-4' : '',isFont?'text-[10px]':'']"
+              class="news-title mb-1 leading-3 laptop:leading-5 text-sm"
+              :class="[
+                !info.text ? 'text-xs !leading-4' : '',
+                isFont ? 'text-[10px]' : '',
+              ]"
             >
               {{ info.title }}
             </NuxtLink>
@@ -56,10 +63,9 @@
             <span class="news-subtitle">{{ info.subtitle }}</span>
           </div>
           <template v-if="!multipleSlider">
-
-          <p class="news-text ">
-            {{ info.text }}
-          </p>
+            <p class="news-text">
+              {{ info.text }}
+            </p>
           </template>
           <slot name="footer"></slot>
         </div>
@@ -81,6 +87,7 @@ const props = defineProps({
   isWidthImg: Boolean,
   heightLatest: Boolean,
   multipleSlider: Boolean,
-  isFont:Boolean
+  isFont: Boolean,
+  isHeightComment: Boolean,
 });
 </script>

@@ -21,7 +21,6 @@
         </div>
 
         <BaseTable :data="insistence" />
-        <button @click="getCurrency">clicked</button>
       </div>
     </div>
   </div>
@@ -60,26 +59,12 @@ async function Currency() {
     .catch((error) => console.log("error", error));
 }
 
-
 ////هانیه اینجا مثلا از اون فایل استفاده کردم :)))
 async function getCurrency() {
   request(apiList.GetCurrency, "POST");
 }
 
 
-
-
-// async function getCurrency() {
-//   fetch("http://23.227.196.200:81/Currency/LastUpdateCurrency", {
-//     method: "POST",
-//     headers: {
-//       accept: "text/plain",
-//       "Content-Type": "application/json",
-//     },
-//   }).then((res) => {
-//     console.log(res, "nahhhhhhid");
-//   });
-// }
 
 const summary = ref({
   title: "دلار / پوند مصر در یک نگاه",

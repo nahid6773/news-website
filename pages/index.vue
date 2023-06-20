@@ -7,12 +7,8 @@
         alt=""
       />
     </div>
-    <div class="flex items-center justify-between mt-3 flex-wrap gap-y-3">
-      <BaseCurrencyCard
-        v-for="(item, index) in currency"
-        :key="index"
-        :data="item"
-      />
+    <div class="flex items-center justify-between mt-10 flex-wrap gap-y-3">
+      <BaseCurrencyCard :data="nahid" />
     </div>
     <!-- row 1 -->
     <div
@@ -26,39 +22,38 @@
     <div
       class="flex items-start justify-between mt-10 w-full flex-wrap laptop:nowrap gap-y-5"
     >
-      <ElementsLatestNews :data="news" class="w-full laptop:w-[52%]" />
-      <ElementsNewsTab :data="news" class="w-full laptop:w-[22%]" />
-      <ElementsPublicity class="w-full laptop:w-[24%]" />
-    </div>
-    <!-- row 3 -->
-    <div
-      class="flex items-start justify-between mt-10 w-full flex-wrap laptop:nowrap gap-y-5"
-    >
-      <CarouselSingleImg :info="topNews" class="w-full laptop:w-[52%]" />
-      <div class="w-full laptop:w-[22%]">
-        <BaseTitle label="اخبار مهم" />
-        <BaseList :data="news" />
+      <div class="w-full laptop:w-[52%] flex flex-col gap-y-4">
+        <ElementsLatestNews :data="news" class="w-full" />
+        <CarouselSingleImg :info="topNews" class="w-full" />
       </div>
-      <div class="w-full laptop:w-[24%] flex flex-col items-center gap-y-2">
-        <CarouselComments :data="comments" class="w-full" />
-        <CarouselSingleImg :info="images" class="w-full" />
+      <div class="w-full laptop:w-[22%] flex flex-col gap-y-3">
+        <ElementsNewsTab :data="news" class="w-full" />
+        <div class="w-full">
+          <BaseTitle label="اخبار مهم" />
+          <BaseList :data="news" />
+        </div>
+        <div class="w-full">
+          <BaseTitle label="آخرین اخبار" />
+          <ElementsLatestContent :data="content" />
+        </div>
+      </div>
+      <div class="w-full laptop:w-[24%] flex flex-col gap-y-5">
+        <ElementsPublicity class="w-full" />
+        <div class="w-full flex flex-col items-center gap-y-2">
+          <CarouselComments :data="comments" class="w-full" />
+          <CarouselSingleImg :info="images" class="w-full" />
+        </div>
       </div>
     </div>
+
     <!-- row 4 -->
     <!-- <CarouselNews :data="news" /> -->
     <!-- row 5 -->
-    <div class="w-full">
-      <BaseTitle label="سایر اخبار مهم" />
+    <div class="w-full mt-3">
+      <BaseTitle label="سایر اخبار مهم" class="mb-[-20px]" />
       <ElementsLastCard :data="lastCard" />
     </div>
-    <button @click="Currency">clicked</button>
-    <!-- row 6 -->
-    <!-- <div class="flex items-start justify-between mt-10 w-full">
-      <div>
-        <BaseTitle label="آخرین اخبار" />
-        <ElementsLatestContent :data="content" />
-      </div>
-    </div> -->
+    <button @click="getCurrency">clicked</button>
   </div>
 </template>
 
@@ -67,11 +62,23 @@ import apiList from "../composables/apiList";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
 import { ref } from "vue";
-
-const data = ref(null);
+const nahid = ref(null);
 const error = ref(null);
 
+var requestOptions = {
+  method: "POST",
+  redirect: "follow",
+};
 
+async function getCurrency() {
+  fetch(apiList.GetCurrency, requestOptions)
+    .then((response) => response.text())
+    .then((result) => {
+      nahid.value = result;
+      console.log(result);
+    })
+    .catch((error) => console.log("error", error));
+}
 
 const currency = ref([
   {

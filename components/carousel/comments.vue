@@ -28,14 +28,14 @@
       <swiper-slide>
         <div class="flex flex-wrap">
           <div v-for="(item, index) in data" :key="index">
-            <BaseHorizontalCard :info="item" avatar inverse />
+            <BaseHorizontalCard :info="item" avatar inverse isHeightComment />
           </div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="flex flex-wrap">
           <div v-for="(item, index) in data" :key="index">
-            <BaseHorizontalCard :info="item" avatar inverse />
+            <BaseHorizontalCard :info="item" avatar inverse isHeightComment/>
           </div>
         </div>
       </swiper-slide>

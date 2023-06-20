@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BaseTitle label="یادداشت ها" />
+    <BaseTitle label="یادداشت ها" isWidth />
     <div class="flex  flex-col ">
       <template v-for="(item, index) in data" :key="index">
         <BaseHorizontalCard :info="item" avatar inverse isFont/>

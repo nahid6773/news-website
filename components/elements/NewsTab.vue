@@ -5,7 +5,7 @@
       <span class="btn-tab bg-success cursor-pointer">پربحث ها</span>
       <!-- <span class="btn-tab bg-success">توصیه شده ها</span> -->
     </div>
-    <div class="relative z-0 overflow-y-scroll bg-white w-full h-[708px]">
+    <div class="relative z-0 overflow-y-scroll bg-white w-full h-[400px]">
       <div class="overflow-x-hidden pt-3">
         <ul class="list-disc list-inside w-full" v-if="data">
           <li

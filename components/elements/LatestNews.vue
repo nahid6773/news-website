@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <BaseTitle label="آخرین مطالب" /> -->
-    <div v-for="item in 5" :key="item">
+    <div v-for="item in 6" :key="item">
       <BaseHorizontalCard :info="data[item]" show-date heightLatest />
     </div>
   </div>
