@@ -28,43 +28,6 @@
 
 <script setup>
 import apiList from "../../composables/apiList";
-import { request } from "../../composables/useFetchApi";
-
-var myHeaders = new Headers();
-myHeaders.append("accept", "text/plain");
-myHeaders.append("Content-Type", "application/json");
-
-var raw = JSON.stringify({
-  typeCurrency: 1,
-  start: 0,
-  end: 1000,
-});
-
-var requestOptions = {
-  method: "POST",
-  headers: myHeaders,
-  body: raw,
-  redirect: "follow",
-};
-
-async function Currency() {
-  fetch(apiList.GetCurrencyById, requestOptions)
-    .then((response) => {
-      data.value = result;
-      response.text();
-    })
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((error) => console.log("error", error));
-}
-
-////هانیه اینجا مثلا از اون فایل استفاده کردم :)))
-async function getCurrency() {
-  request(apiList.GetCurrency, "POST");
-}
-
-
 
 const summary = ref({
   title: "دلار / پوند مصر در یک نگاه",

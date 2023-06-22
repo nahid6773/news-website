@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="data">
     <NuxtLink to="/currency" v-for="item in data" :key="item.currencyType">
       <div

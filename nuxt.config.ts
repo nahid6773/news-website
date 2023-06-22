@@ -7,5 +7,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  
+  runtimeConfig: {
+    public: {
+      BASE_URL: "http://newspodium.sakku-khatam.ir",
+    },
+  },
 });

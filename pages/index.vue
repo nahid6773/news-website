@@ -8,7 +8,8 @@
       />
     </div>
     <div class="flex items-center justify-between mt-10 flex-wrap gap-y-3">
-      <BaseCurrencyCard :data="nahid" />
+      <BaseCurrencyCard :data="data" />
+      {{ data }}
     </div>
     <!-- row 1 -->
     <div
@@ -61,24 +62,18 @@
 import apiList from "../composables/apiList";
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
-import { ref } from "vue";
-const nahid = ref(null);
-const error = ref(null);
-
-var requestOptions = {
-  method: "POST",
-  redirect: "follow",
-};
+import { ref, onMounted } from "vue";
 
 async function getCurrency() {
-  fetch(apiList.GetCurrency, requestOptions)
-    .then((response) => response.text())
-    .then((result) => {
-      nahid.value = result;
-      console.log(result);
-    })
-    .catch((error) => console.log("error", error));
+  const { data, pending } = await useFetchApi(
+    "http://23.227.196.200:81/Currency",
+    "POST"
+  );
+  console.log(data, "nnnnnnnnnnnnnnnnnnnn");
 }
+ onMounted(() => {
+  getCurrency();
+});
 
 const currency = ref([
   {
