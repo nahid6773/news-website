@@ -158,6 +158,7 @@
       </div>
       <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
+        {{selectedNew}}
       </div>
     </div>
   </div>
@@ -167,6 +168,10 @@
 const route = useRoute();
 import { useNewsList } from "~/composables/useNews";
 const { news, pending } = useNewsList();
+const { data } = useFetchApi(
+  "http://newspodium.sakku-khatam.ir//News/newsByKey",
+  "GET"
+);
 
 const selectedNew =
   !pending.value &&
@@ -174,7 +179,7 @@ const selectedNew =
 
 useHead({
   title: route.params.slug,
-  meta: [
+  meta: [ 
     {
       name: "description",
       content: route.params.slug,

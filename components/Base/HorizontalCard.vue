@@ -5,7 +5,7 @@
       :class="[
         isHeight ? 'h-80' : '',
         !isHeight ? 'border-b-2 mb-2' : '',
-        heightLatest ? 'h-36' : '',
+        heightLatest ? 'h-56 laptop:h-36' : '',
         isHeightComment ? 'h-56' : '',
       ]"
     >

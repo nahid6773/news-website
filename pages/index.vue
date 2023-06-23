@@ -7,16 +7,19 @@
         alt=""
       />
     </div>
-    <div class="flex items-center justify-between mt-10 flex-wrap gap-y-3">
+    <div class="flex items-center justify-between mt-10 flex-wrap gap-y-3" >
       <BaseCurrencyCard :data="data" />
-      {{ data }}
     </div>
     <!-- row 1 -->
     <div
       class="flex items-start justify-between mt-10 w-full laptop:h-80 flex-wrap laptop:nowrap gap-y-5"
     >
       <CarouselSingleNew :items="news" class="w-full laptop:w-[52%] h-full" />
-      <ElementsChosenCard :data="news" class="w-full laptop:w-[22%] h-full" />
+      <ElementsChosenCard
+        :data="news"
+        :title="`برگزیده ها`"
+        class="w-full laptop:w-[22%] h-full"
+      />
       <ElementsNotes :data="notes" class="w-full laptop:w-[24%] h-full" />
     </div>
     <!-- row 2 -->
@@ -54,26 +57,27 @@
       <BaseTitle label="سایر اخبار مهم" class="mb-[-20px]" />
       <ElementsLastCard :data="lastCard" />
     </div>
-    <button @click="getCurrency">clicked</button>
+    <!-- <button @click="getCurrency">clicked</button> -->
   </div>
 </template>
 
 <script setup>
 import apiList from "../composables/apiList";
 import { useNewsList } from "~/composables/useNews";
-const { news, pending } = useNewsList();
+const { news } = useNewsList();
 import { ref, onMounted } from "vue";
 
-async function getCurrency() {
-  const { data, pending } = await useFetchApi(
-    "http://23.227.196.200:81/Currency",
-    "POST"
-  );
-  console.log(data, "nnnnnnnnnnnnnnnnnnnn");
-}
- onMounted(() => {
-  getCurrency();
-});
+const { data, pending } = await useFetchApi(
+  "http://23.227.196.200:81/Currency",
+  "POST"
+);
+
+// async function getNewsHeadline() {
+//   const { data, pending } = await useFetchApi(
+//     "http://localhost:1876/News/newsHeadline",
+//     "GET"
+//   );
+// }
 
 const currency = ref([
   {

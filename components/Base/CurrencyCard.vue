@@ -1,5 +1,4 @@
 <template>
-  <div v-if="data">
     <NuxtLink to="/currency" v-for="item in data" :key="item.currencyType">
       <div
         class="bg-white w-40 flex flex-col items-center rounded cursor-pointer"
@@ -18,8 +17,6 @@
         </div>
       </div>
     </NuxtLink>
-  </div>
-      {{data }}
 </template>
 
 <script setup>

@@ -1,29 +1,52 @@
 <template>
   <div class="flex flex-col bg-white gap-y-3">
     <div class="flex w-full justify-between items-center">
-      <span class="btn-tab bg-success cursor-pointer">پرخواننده ها</span>
-      <span class="btn-tab bg-success cursor-pointer">پربحث ها</span>
-      <!-- <span class="btn-tab bg-success">توصیه شده ها</span> -->
+      <span class="btn-tab bg-success cursor-pointer" @click="clickedTab(1)"
+        >پرخواننده ها</span
+      >
+      <span class="btn-tab bg-success cursor-pointer" @click="clickedTab(2)"
+        >پربحث ها</span
+      >
     </div>
     <div class="relative z-0 overflow-y-scroll bg-white w-full h-[400px]">
-      <div class="overflow-x-hidden pt-3">
-        <ul class="list-disc list-inside w-full" v-if="data">
-          <li
-            v-for="(n, index) in data"
-            :key="index"
-            class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
-          >
-            <span class="index-tab flex items-center justify-center ml-2">{{
-              index + 1
-            }}</span>
-            <NuxtLink  to="#">
-              <h3 class="item-tab">
-                {{ n.title }}
-              </h3>
-            </NuxtLink>
-          </li>
-        </ul>
-      </div>
+      <!-- tab 1 -->
+        <div v-if="tabItem===1" class="overflow-x-hidden pt-3">
+          <ul class="list-disc list-inside w-full" v-if="data">
+            <li
+              v-for="(n, index) in data"
+              :key="index"
+              class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
+            >
+              <span class="index-tab flex items-center justify-center ml-2">{{
+                index + 1
+              }}</span>
+              <NuxtLink to="#">
+                <h3 class="item-tab">
+                  {{ n.title }}
+                </h3>
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+    <!-- tab 2 -->
+       <div v-else-if="tabItem===2" class="overflow-x-hidden pt-3">
+          <ul class="list-disc list-inside w-full" v-if="data">
+            <li
+              v-for="(n, index) in data"
+              :key="index"
+              class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
+            >
+              <span class="index-tab flex items-center justify-center ml-2">{{
+                index + 1
+              }}</span>
+              <NuxtLink to="#">
+                <h3 class="item-tab">
+                  {{ n.title }}
+                </h3>
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>     
     </div>
   </div>
 </template>
@@ -32,14 +55,19 @@ export default {
   name: "NewsTab",
 
   data() {
-    return {};
+    return {
+      tabItem: 1,
+    };
   },
   props: {
     data: Array,
   },
-  mounted() {},
 
-  methods: {},
+  methods: {
+    clickedTab(id) {
+      this.tabItem = id;
+    },
+  },
 };
 </script>
 

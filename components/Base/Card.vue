@@ -1,11 +1,11 @@
 <template>
   <div
-    class="bg-white flex flex-col items-center justify-between gap-y-1 w-full laptop:w-80 h-72 radius"
+    class="bg-white flex flex-col items-center justify-between gap-y-1 w-full laptop:w-72 h-72 radius"
   >
     <div class="w-full" >
       <img
         class="w-full"
-        src="https://media.farsnews.ir/Uploaded/Files/Images/1402/03/25/14020325000452_Test_PhotoO.jpg"
+        src="https://media.farsnews.ir/Uploaded/Files/Images/1402/03/11/14020311000400_Test_PhotoO.jpg"
         alt=""
       />
     </div>

@@ -3,7 +3,7 @@
     <div
       class="flex w-full justify-between bg-success text-white font-bold px-2 py-1 items-center"
     >
-      <span> برگزیده ها </span>
+      <span>{{title}}</span>
       <IconChosen />
     </div>
     <div class="relative z-0 overflow-y-scroll bg-white w-full h-72">
@@ -29,6 +29,7 @@
 <script setup>
 const props = defineProps({
   data: Array,
+  title:String
 });
 </script>
 

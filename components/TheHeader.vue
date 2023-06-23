@@ -10,7 +10,7 @@
         @click="search = false"
       />
       <div
-        class="relative mx-auto text-gray-600   flex items-center justify-center"
+        class="relative mx-auto text-gray-600 flex items-center justify-center"
       >
         <input
           class="border-2 border-gray-300 bg-white h-14 pr-8 text-sm focus:outline-none text-sm focus:ring-4 focus:ring-success focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-96 shadow-none bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
@@ -40,30 +40,51 @@
       </div>
       <div class="flex items-center justify-center">
         <div
-          class=" flex items-center justify-between py-3 mt-7 shadow-md text-center bg-gray-600 w-full"
+          class="flex items-center justify-between py-3 mt-7 shadow-md text-center bg-gray-600 w-full relative"
         >
-          <div class="hidden  text-xs font-bold text-white lg:flex-grow laptop:flex">
+        <!-- show menu mobile -->
+          <div
+            v-if="showMenu"
+            class="w-[70%] tablet:w-[50%] laptop:w-[23%] h-full bg-gray-200 fixed top-0 right-0 z-20"
+          >
+            <div>
+              <IconClose
+                class="absolute top-[10px] right-[10px]"
+                @click="showMenu = false"
+              />
+              <div class="flex flex-col items-start gap-y-5 pt-16 pr-5">
+                <nuxt-link
+                  v-for="(item, index) in itemMenu"
+                  :key="index"
+                  :to="item.link"
+                  class="lg:inline-block lg:mt-0 px-4 hover:text-greenlight"
+                  :class="index && 'border-r'"
+                >
+                  {{ item.title }}
+                </nuxt-link>
+              </div>
+            </div>
+          </div>
+        <!-- show menu desktop -->
+          <div
+            class="hidden text-xs font-bold text-white lg:flex-grow laptop:flex"
+          >
             <nuxt-link
               v-for="(item, index) in itemMenu"
               :key="index"
               :to="item.link"
-              class="  lg:inline-block lg:mt-0 px-4  hover:text-greenlight"
+              class="lg:inline-block lg:mt-0 px-4 hover:text-greenlight"
               :class="index && 'border-r'"
             >
               {{ item.title }}
             </nuxt-link>
           </div>
-          <div class=" flex items-center justify-between px-3 laptop:w-40 w-full">
-            <IconMenu />
+          <div
+            class="flex items-center justify-between px-3 laptop:w-40 w-full"
+          >
+            <IconMenu @click="showMenu = !showMenu" />
             <IconSearch @click="search = true" />
-            <!-- <button
-              class="flex items-center justify-between bg-gray-500 py-1 px-3 rounded-full"
-            >
-              <IconLight  />
-              <IconDark />
-            </button> -->
             <ElementsThemeChanger />
-            
           </div>
         </div>
       </div>
@@ -79,6 +100,7 @@ export default {
   data() {
     return {
       search: false,
+      showMenu: false,
       date: null,
       interval: null,
       itemMenu: [
@@ -158,5 +180,4 @@ export default {
   backdrop-filter: blur(2px);
   background: rgba(0, 0, 0, 0.69);
 }
-
 </style>

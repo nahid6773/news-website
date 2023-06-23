@@ -1,19 +1,26 @@
 <template>
-  <div class="gridClass" v-if="news">
+  <div class="gridClass my-5" v-if="news">
     <div class="flex items-center justify-between mt-3 flex-wrap gap-y-3">
-      <BaseCurrencyCard
+      <!-- <BaseCurrencyCard
         v-for="(item, index) in currency"
         :key="index"
         :data="item"
-      />
+      /> -->
     </div>
     <ElementsLastCard :data="lastCard" />
+    <div class="w-full flex items-center justify-between my-5">
+      <BaseCard/>
+      <BaseCard/>
+      <BaseCard/>
+      <BaseCard/>
+    </div>
     <div class="flex w-full items-start justify-between">
       <div class="w-[73%]">
         <ElementsLatestNews :data="news"  />
       </div>
-      <div class="w-[25%]">
+      <div class="w-[25%] flex flex-col gap-y-5">
         <ElementsPublicity />
+        <ElementsChosenCard :data="news" :title="`برگزیده های اقتصادی`"/>
       </div>
     </div>
   </div>
