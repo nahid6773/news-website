@@ -158,28 +158,25 @@
       </div>
       <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
-        {{selectedNew}}
+        {{ data }}
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from "vue";
 const route = useRoute();
-import { useNewsList } from "~/composables/useNews";
-const { news, pending } = useNewsList();
-const { data } = useFetchApi(
-  "http://newspodium.sakku-khatam.ir//News/newsByKey",
-  "GET"
+const routId = ref(route.params);
+const { data, pending } =await useFetchApi(
+  `http://newspodium.sakku-khatam.ir/News/newsByKey`,
+  "GET",
+  { Id: routId.value }
 );
-
-const selectedNew =
-  !pending.value &&
-  news.collection.find((item) => item.titlePage == route.params.slug);
 
 useHead({
   title: route.params.slug,
-  meta: [ 
+  meta: [
     {
       name: "description",
       content: route.params.slug,

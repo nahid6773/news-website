@@ -42,7 +42,7 @@
         <div
           class="flex items-center justify-between py-3 mt-7 shadow-md text-center bg-gray-600 w-full relative"
         >
-        <!-- show menu mobile -->
+          <!-- show menu mobile -->
           <div
             v-if="showMenu"
             class="w-[70%] tablet:w-[50%] laptop:w-[23%] h-full bg-gray-200 fixed top-0 right-0 z-20"
@@ -65,7 +65,7 @@
               </div>
             </div>
           </div>
-        <!-- show menu desktop -->
+          <!-- show menu desktop -->
           <div
             class="hidden text-xs font-bold text-white lg:flex-grow laptop:flex"
           >
@@ -113,35 +113,24 @@ export default {
           link: "/Economic",
         },
         {
+          title: "تجارت",
+          link: "/Business",
+        },
+        {
           title: " بین الملل",
-          link: "#",
-        },
-        {
-          title: " سیاست",
-          link: "#",
-        },
-        {
-          title: " علم وپیشرفت",
-          link: "#",
-        },
-        {
-          title: " دانشگاه",
           link: "#",
         },
         {
           title: " فرهنگ",
           link: "#",
         },
-        {
-          title: " هنر و رسانه",
-          link: "#",
-        },
+
         {
           title: " ورزش",
           link: "#",
         },
         {
-          title: " زندگی",
+          title: " شخصیت شناسی",
           link: "#",
         },
       ],

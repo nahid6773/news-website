@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div v-if="info">
     <section
       class=""
       :class="[
@@ -36,11 +36,11 @@
           class="block overflow-hidden float-right w-[30%]"
           :class="[isWidthImg ? 'w-[50%]' : '', multipleSlider ? 'w-full' : '']"
         >
-          <NuxtLink :to="'/news/' + info.title"
+          <NuxtLink :to="'/news/' + info.id"
             ><img
               src="https://picsum.photos/300/300"
               class="h-full w-full"
-              :alt="info.title"
+              :alt="info.subtitle"
           /></NuxtLink>
         </div>
         <div class="top-0 left-0 bottom-0 float-right w-[70%] px-4 py-2">
@@ -49,7 +49,7 @@
           </div>
           <h2>
             <NuxtLink
-              :to="'/news/' + info.title"
+              :to="'/news/' + info.id"
               class="news-title mb-1 leading-3 laptop:leading-5 text-sm"
               :class="[
                 !info.text ? 'text-xs !leading-4' : '',
@@ -63,7 +63,10 @@
             <span class="news-subtitle">{{ info.subtitle }}</span>
           </div>
           <template v-if="!multipleSlider">
-            <p class="news-text">
+            <p
+              class="news-text"
+              :class="heightLatest ? 'overflow-hidden h-[43px]' : ''"
+            >
               {{ info.text }}
             </p>
           </template>

@@ -13,16 +13,16 @@
         <div v-if="tabItem===1" class="overflow-x-hidden pt-3">
           <ul class="list-disc list-inside w-full" v-if="data">
             <li
-              v-for="(n, index) in data"
-              :key="index"
+              v-for="(item,index) in data"
+              :key="item.key"
               class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
             >
               <span class="index-tab flex items-center justify-center ml-2">{{
                 index + 1
               }}</span>
-              <NuxtLink to="#">
+              <NuxtLink :to="'/news/' + item.id">
                 <h3 class="item-tab">
-                  {{ n.title }}
+                  {{ item.title }}
                 </h3>
               </NuxtLink>
             </li>
@@ -32,16 +32,16 @@
        <div v-else-if="tabItem===2" class="overflow-x-hidden pt-3">
           <ul class="list-disc list-inside w-full" v-if="data">
             <li
-              v-for="(n, index) in data"
-              :key="index"
+              v-for="item in data"
+              :key="item.key"
               class="text-right text-[12px] py-1 px-3 word-wrap flex items-center border-b-2 px-2 py-4"
             >
               <span class="index-tab flex items-center justify-center ml-2">{{
                 index + 1
               }}</span>
-              <NuxtLink to="#">
+              <NuxtLink :to="'/news/' + info.id">
                 <h3 class="item-tab">
-                  {{ n.title }}
+                  {{ item.title }}
                 </h3>
               </NuxtLink>
             </li>

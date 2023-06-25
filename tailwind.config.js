@@ -26,7 +26,8 @@ module.exports = {
       'gray-500':'#4b5563',
       'gray-600':'#374151',
       'gray-700':'#1f2937',
-      'yellow-600':'#ff8000'
+      'yellow-600':'#ff8000',
+      'sky-400':'#38bdf8'
     },
     screens: {
       'mobile-s': '320px',

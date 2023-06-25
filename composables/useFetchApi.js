@@ -3,13 +3,15 @@
 const request = async (
   url,
   method = "POST",
-  body = {},
+  params = {},
+  body = null,
   isSendToken = false
 ) => {
   try {
     const options = {
       method: method,
-      body: JSON.stringify(body),
+      params: params,
+      body: body ? JSON.stringify(body) : null,
       headers: {
         accept: "text/plain",
         "Content-Type": "application/json",

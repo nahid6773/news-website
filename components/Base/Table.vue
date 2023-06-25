@@ -1,7 +1,7 @@
 <template>
   <div class="mb-2">
     <div class="overflow-hidden bg-white">
-      <h2 class="text-gray-700 border-b-2 divide-[#e6e6e6] p-4 text-sm text-zinc-500 before:content-[''] before:bg-warning before:w-3 before:h-3 before:relative before:inline-block before:rounded-full before:top-[2px] before:mx-[2px]">
+      <h2 v-if="!noTitle" class="text-gray-700 border-b-2 divide-[#e6e6e6] p-4 text-sm text-zinc-500 before:content-[''] before:bg-warning before:w-3 before:h-3 before:relative before:inline-block before:rounded-full before:top-[2px] before:mx-[2px]">
         {{ data.title }}
       </h2>
 
@@ -34,6 +34,7 @@ const props = defineProps({
   hide_header: {
     type: Boolean,
     default: false
-  }
+  },
+  noTitle:Boolean
 });
 </script>

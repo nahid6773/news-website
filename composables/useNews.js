@@ -1,6 +1,6 @@
 export const useNewsList = () => {
   const { data, pending, error, execute } = useAsyncData("news", () =>
-    $fetch(`News/NewsByDate`, {
+    $fetch(`News/newsHeadline`, {
       method: "GET",
       baseURL: "http://newspodium.sakku-khatam.ir",
       params: {
@@ -17,7 +17,8 @@ export const useNewsList = () => {
   });
   let news = data._rawValue?.collection.map((res) => {
     return {
-      title: res.titlePage,
+      id:res.key,
+      title: res.titleNews,
       subtitle: res.newsAgencyName,
       text: res.lead,
     };
