@@ -1,20 +1,20 @@
 <template>
   <div class="gridClass my-5" v-if="news">
     <div class="flex items-center justify-between mt-3 flex-wrap gap-y-3" v-if="data">
-      <BaseCurrencyCard :data="data" />
+      <BaseCurrencyCard :data="dataCurrency" />
     </div>
     <ElementsLastCard :data="lastCard" />
-    <div class="w-full flex items-center justify-between my-5">
+    <div class="w-full flex flex-wrap gap-y-3 items-center justify-between my-5">
       <BaseCard />
       <BaseCard />
       <BaseCard />
       <BaseCard />
     </div>
-    <div class="flex w-full items-start justify-between">
-      <div class="w-[73%]">
+    <div class="flex flex-wrap laptop:flex-nowrap w-full items-start justify-between">
+      <div class="w-full laptop:w-[73%]">
         <ElementsLatestNews :data="news" />
       </div>
-      <div class="w-[25%] flex flex-col gap-y-5">
+      <div class="w-full laptop:w-[25%] flex flex-col gap-y-5">
         <ElementsPublicity />
         <ElementsChosenCard :data="news" :title="`برگزیده های اقتصادی`" />
       </div>
@@ -25,10 +25,15 @@
 <script setup>
 import { useNewsList } from "~/composables/useNews";
 const { news } = useNewsList();
-const { data, pending } = await useFetchApi(
-  "http://23.227.196.200:81/Currency/LastUpdateCurrency",
-  "POST"
-);
+import { ref, onMounted } from "vue";
+const dataCurrency = ref(null);
+onMounted(() => {
+  const { data, pending } = useFetchApi(
+    "http://23.227.196.200:81/Currency/LastUpdateCurrency",
+    "POST"
+  );
+  dataCurrency.value = data;
+});
 
 const lastCard = ref([
   {

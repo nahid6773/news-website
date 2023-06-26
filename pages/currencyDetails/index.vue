@@ -15,6 +15,7 @@
             </h2>
             <ChartLine :data="chartData" />
           </div>
+    
           <div class="w-1/2 bg-white flex flex-col justify-between rounded-md overflow-hidden">
             <BaseTable :data="revenue" hide_header />
           </div>

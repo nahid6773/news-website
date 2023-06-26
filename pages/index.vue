@@ -9,10 +9,11 @@
     </div>
     <div
       class="flex items-center justify-between mt-10 flex-wrap gap-y-3"
-      v-if="data"
+      v-if="dataCurrency"
     >
-      <BaseCurrencyCard :data="data" />
+      <BaseCurrencyCard :data="dataCurrency" />
     </div>
+    {{dataCurrency}}
     <div class="w-full p-2 bg-white text-center mt-5">
       <NuxtLink to="/Currency" class="font-bold text-sm">
         جهت اطلاع از آخرین قیمت طلا و ارز
@@ -67,7 +68,9 @@
       <BaseTitle label="سایر اخبار مهم" class="mb-[-20px]" />
       <ElementsLastCard :data="lastCard" />
     </div>
-    <div class="w-full">
+
+    <!-- world map -->
+    <div class="w-full bg-white mb-10">
       <BaseTitle label="اخبار جهان " class="" />
       <svg viewBox="0 0 900 450">
         <defs></defs>
@@ -1842,21 +1845,22 @@ import { useNewsList } from "~/composables/useNews";
 const { news } = useNewsList();
 import { ref, onMounted } from "vue";
 
-const { data, pending } = await useFetchApi(
-  "http://23.227.196.200:81/Currency/LastUpdateCurrency",
-  "POST"
+///////// get last Currency 
+  const { data:dataCurrency, pendingCurrency } = useFetchApi(
+    "http://23.227.196.200:81/Currency/LastUpdateCurrency",
+    "POST"
+  );
+
+//////// get news HeadLine
+const { data: dataNews, pending: pendingNews } = await useFetchApi(
+  "http://newspodium.sakku-khatam.ir/News/newsHeadline",
+  "GET",
+  {
+    NewsAgencyId: 20,
+    Page: 1,
+    date: "2023 05 18",
+  }
 );
-
-// const { data, pending } = await useFetchApi(
-//   "http://newspodium.sakku-khatam.ir/News/newsHeadline",
-//   "GET",
-//   {
-//     NewsAgencyId: 20,
-//     Page: 1,
-//     date: "2023 05 18",
-//   }
-// );
-
 const images = ref([
   {
     image:
