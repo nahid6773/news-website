@@ -7,6 +7,7 @@
     <TheFooter />
 
     <ElementsScrollToTop />
+    <ElementsSetting />
   </div>
 </template>
 

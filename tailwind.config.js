@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
+const custom_colors = require('./style/theme.js')
 
 module.exports = {
   darkMode: 'class',
@@ -14,9 +15,10 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
+      ...custom_colors,
       transparent: 'transparent',
       current: 'currentColor',
-      'primary': '#385e9d',
+      // 'primary': '#385e9d',
       'warning': '#eec62a',
       'success': '#005b3d',
       'greenlight':'#1c9541',
