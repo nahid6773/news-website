@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col bg-white gap-y-3">
     <div
-      class="flex w-full justify-between bg-success text-white font-bold px-2 py-1 items-center"
+      class="flex w-full justify-between bg-primary text-white font-bold px-2 py-1 items-center"
     >
       <span>{{title}}</span>
       <IconChosen />

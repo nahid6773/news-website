@@ -58,12 +58,12 @@
         style="z-index: 999"
       >
         <button
-          class="carousel1-next-single-card hover:border-2 bg-success text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-next-single-card hover:border-2 bg-primary text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft class="rotate-180" />
         </button>
         <button
-          class="carousel1-prev-single-card hover:border-2 bg-success text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
+          class="carousel1-prev-single-card hover:border-2 bg-primary text-white hover:bg-yellow-600 hover:border-gray-200 w-7 h-7 flex items-center justify-center mx-1 px-1"
         >
           <IconArrowLeft />
         </button>

@@ -1,10 +1,10 @@
 <template>
   <div class="flex flex-col bg-white gap-y-3">
     <div class="flex w-full justify-between items-center">
-      <span class="btn-tab bg-success cursor-pointer" @click="clickedTab(1)"
+      <span class="btn-tab bg-primary cursor-pointer" @click="clickedTab(1)"
         >پرخواننده ها</span
       >
-      <span class="btn-tab bg-success cursor-pointer" @click="clickedTab(2)"
+      <span class="btn-tab bg-primary cursor-pointer" @click="clickedTab(2)"
         >پربحث ها</span
       >
     </div>

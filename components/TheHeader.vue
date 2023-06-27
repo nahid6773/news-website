@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-success mb-4 pt-3">
+  <header class="bg-primary mb-4 pt-3">
     <!-- search overlay -->
     <div
       v-if="search"
@@ -13,7 +13,7 @@
         class="relative mx-auto text-gray-600 flex items-center justify-center"
       >
         <input
-          class="border-2 border-gray-300 bg-white h-14 pr-8 text-sm focus:outline-none text-sm focus:ring-4 focus:ring-success focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-96 shadow-none bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
+          class="border-2 border-gray-300 bg-white h-14 pr-8 text-sm focus:outline-none text-sm focus:ring-4 focus:ring-primary focus:ring-opacity-20 focus:border-opacity-40 border-transparent w-96 shadow-none bg-slate-200 pr-8 transition-[width] duration-300 ease-in-out focus:border-transparent focus:w-72"
           type="search"
           name="search"
           placeholder="متن جستجو ..."

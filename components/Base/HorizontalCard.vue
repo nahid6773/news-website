@@ -19,7 +19,7 @@
         <!-- showDate -->
         <div
           v-if="showDate"
-          class="border-2 border-success flex items-center flex-col w-10 laptop:w-12 h-10 laptop:h-12 text-center leading-3 absolute -mr-2 mt-2 bg-white p-1 hover:bg-success hover:text-white"
+          class="border-2 border-primary flex items-center flex-col w-10 laptop:w-12 h-10 laptop:h-12 text-center leading-3 absolute -mr-2 mt-2 bg-white p-1 hover:bg-primary hover:text-white"
         >
           <span class="text-xs w-10 block">10</span
           ><b class="w-10 block text-[8px]">اسفند</b>

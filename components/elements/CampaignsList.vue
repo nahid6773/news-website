@@ -2,7 +2,7 @@
   <div class="flex flex-col bg-white mb-2 rounded-lg min-h-[330px]">
     <div class="flex flex-col relative">
       <nuxt-link
-        class="flex h-10 bg-success text-white top-0 right-0 w-full justify-between py-2 px-3 rounded-t-lg"
+        class="flex h-10 bg-primary text-white top-0 right-0 w-full justify-between py-2 px-3 rounded-t-lg"
         to="/"
       >
         <span class="flex items-center">

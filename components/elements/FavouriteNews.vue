@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white w-full flex flex-col relative rounded-lg h-[380px]">
     <div
-      class="flex h-10 bg-success text-white top-0 right-0 w-full justify-between py-2 px-3 rounded-t-lg"
+      class="flex h-10 bg-primary text-white top-0 right-0 w-full justify-between py-2 px-3 rounded-t-lg"
     >
       <span class="flex items-center"> برگزیده ها </span>
       <span class="flex items-center">

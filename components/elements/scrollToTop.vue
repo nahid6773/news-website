@@ -1,7 +1,7 @@
 <template>
   <button
     id="to-top-button"
-    class="hidden fixed z-50 bottom-10 right-10 p-1 border-0 shadow-md bg-success text-white text-lg font-semibold transition-colors duration-300"
+    class="hidden fixed z-50 bottom-10 right-10 p-1 border-0 shadow-md bg-primary text-white text-lg font-semibold transition-colors duration-300"
     @click="goToTop"
   >
     <IconArrowUp />
