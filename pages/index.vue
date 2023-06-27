@@ -1,4 +1,12 @@
 <template>
+  <!-- ////// for loading data -->
+  <div
+    class="w-full text-center flex items-center justify-center text-primary h-[500px]"
+    v-if="!news"
+  >
+    Loading...
+    <IconSpinner />
+  </div>
   <div class="gridClass mx-auto my-3" v-if="news">
     <div class="w-full">
       <img
@@ -8,12 +16,25 @@
       />
     </div>
     <div
+      v-if="errorCurrency"
+      class="w-full flex items-center justify-center text-primary h-24 font-bold"
+    >
+      <IconFace />
+      <span>اطلاعاتی دریافت نشد</span>
+    </div>
+    <div
+      class="w-full flex items-center justify-center text-primary h-24"
+      v-else-if="!dataCurrency"
+    >
+      <IconSpinner />
+      <span class="font-bold"> Loading... </span>
+    </div>
+    <div
       class="flex items-center justify-between mt-10 flex-wrap gap-y-3"
       v-if="dataCurrency"
     >
       <BaseCurrencyCard :data="dataCurrency" />
     </div>
-    {{dataCurrency}}
     <div class="w-full p-2 bg-white text-center mt-5">
       <NuxtLink to="/Currency" class="font-bold text-sm">
         جهت اطلاع از آخرین قیمت طلا و ارز
@@ -60,7 +81,6 @@
         </div>
       </div>
     </div>
-
     <!-- row 4 -->
     <!-- <CarouselNews :data="news" /> -->
     <!-- row 5 -->
@@ -1845,11 +1865,33 @@ import { useNewsList } from "~/composables/useNews";
 const { news } = useNewsList();
 import { ref, onMounted } from "vue";
 
-///////// get last Currency 
-  const { data:dataCurrency, pendingCurrency } = useFetchApi(
-    "http://23.227.196.200:81/Currency/LastUpdateCurrency",
-    "POST"
-  );
+const dataCurrency = ref(null);
+const errorCurrency = ref(null);
+onMounted(() => {
+  fetch("http://23.227.196.200:81/Currency/LastUpdateCurrency", {
+    method: "POST",
+    headers: {
+      Accept: "text/plain",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      console.log(result);
+      dataCurrency.value = JSON.parse(result);
+    })
+   .catch((error) =>{ 
+      console.log("error currency", error)
+      errorCurrency.value=error
+      
+      });
+});
+
+///////// get last Currency
+// const { data: dataCurrency, pendingCurrency } = useFetchApi(
+//   "http://23.227.196.200:81/Currency/LastUpdateCurrency",
+//   "POST"
+// );
 
 //////// get news HeadLine
 const { data: dataNews, pending: pendingNews } = await useFetchApi(

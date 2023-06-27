@@ -2,17 +2,19 @@
   <div class="gridClass">
     <div class="py-6 flex items-start justify-between w-full flex-wrap gap-y-5">
       <div class="w-full laptop:w-6/12 laptop-m:w-7/12 flex flex-col gap-y-5">
-        <div class="w-full bg-white flex flex-col gap-y-6 p-3">
+        <div class="w-full bg-white flex flex-col gap-y-6 p-3" v-if="details">
           <div class="flex items-center justify-between w-full px-2">
             <span class="bg-gray-300 py-1 px-4 text-gray-500">خانه</span>
             <span class="cursor-pointer"><IconLike /></span>
           </div>
           <div class="flex flex-col gap-y-3">
-            <span class="text-sm text-gray-400">معاون وزیر راه و شهرسازی</span>
+            <span class="text-sm text-gray-400">
+              {{ details.item.newsAgencyName }}
+            </span>
             <h1
               class="font-bold hover:text-yellow-600 cursor-pointer mobile-s:text-sm laptop:text-lg"
             >
-              نظام شهرنشینی بر پایه حمل و نقل ریلی تنها راه‌ حل مشکلات
+              {{ details.item.titleNews }}
             </h1>
           </div>
           <hr />
@@ -34,46 +36,18 @@
           <div>
             <img src="https://picsum.photos/900/400" alt="" />
             <p class="bg-gray-300 px-2 py-3">
-              ایستگاه‌های راه‌آهن به عنوان دروازه ارتباط بین شهر و ریل
-              ایمنی،‌آسایش و امنیت مسافر را تضمین کند و ارائه خدمات نوین نظیر
-              حمل و نقل درب تا درب،‌تجاری سازی فضاها از طریق توسعه کسب و کار و
-              ایجاد اشتغال برای ساکنان محدوده ایستگاه داشته باشد.
+              {{ details.item.lead }}
             </p>
           </div>
           <p class="text-sm leading-7 py-3">
-            به گزارش خبرنگار اقتصادی خبرگزاری فارس، هفتمین کنفرانس بین‌المللی
-            ایستگاه‌های آینده اتحادیه بین‌المللی راه‌آهن‌ها امروز با حضور وزیر
-            راه و شهرسازی، دبیرکل اتحادیه بین‌المللی راه‌آهن‌ها، مدیرعامل
-            راه‌آهن جمهوری اسلامی ایران، و جمعی از دست اندرکاران حمل و نقل ریلی
-            کشور و چندین کشور در تهران دنیا آغاز شد.<br />
-            در این مراسم مدیرعامل راه‌آهن جمهوری اسلامی ایران اظهار داشت: امروز
-            تصور وجود و اداره شهرهای بزرگ توسعه یافته بدون نظام هماهنگ ریلی
-            مانند تصور آسمانخراش‌های بدون آسانسور و تصویری دور از ذهن است.<br />
-            سعید رسولی افزود:در عصر حاضر شهرسازی‌ها مبتنی بر حمل و نقل همگانی در
-            کشورهای پیشرفته بر پایه حمل و نقل ریلی بنا شده‌اند و توسعه شهرها با
-            رویکرد توسعه پایدار انجام می‌شود. مدیرعامل راه‌آهن جمهوری اسلامی
-            ایران افزود: ایستگاههای راه‌آهن ایفا کننده نقش اصلی این توسعه هستند
-            و نمی‌توان آنها را صرفا به عنوان محلی برای سوار و پیاده شدن مسافر در
-            نظر گرفت. <br />ایستگاه‌ها به عنوان نقاط مهم شهری در محل تلاقی شهر و
-            ریل بوده و بسیاری از خدمات علاوه بر دسترسی به حمل و نقل بر آنها
-            ارائه می‌شود که همین امر ایستگاه‌های راه‌آهن دنیا را به نقاط مهم
-            جاذب سفرهای شهری و دروازه ارائه فرهنگ شهرها تبدیل کرده است.<br />
-            رسولی گفت:تجربه‌ها نشان می‌دهد تنها راه حل برون رفت از مشکلات تردد
-            مردم در کلانشهرها ترافیک و آلودگی‌های زیست محیطی، ایجاد نظام
-            شهرنشینی بر پایه حمل و نقل ریلی است تا حمل و نقل برون و درون شهری بر
-            اساس شبکه ریلی کشور برنامه‌ریزی شود.<br />
-            وی ادامه داد:ایستگاه‌های راه‌آهن به عنوان دروازه ارتباط بین شهر و
-            ریل باید با ظاهر و طراحی مناسب این دو بخش را مرتبط کند ضمنا حفظ
-            ایمنی،‌آسایش و امنیت مسافر را تضمین کند و ارائه خدمات نوین نظیر حمل
-            و نقل درب تا درب،‌تجاری سازی فضاها از طریق توسعه کسب و کار و ایجاد
-            اشتغال برای ساکنان محدوده ایستگاه داشته باشد.
+            {{ details.item.body }}
           </p>
           <hr />
           <div
             class="flex w-full items-center justify-between flex-wrap gap-y-3"
           >
             <div class="text-xs hover:text-greenlight font-bold">
-              لینک کوتاه : http://mellat.demo-qaleb.ir/?p=142
+              لینک کوتاه : {{ details.item.shortLink }}
             </div>
             <div
               class="flex flex-wrap items-center justify-start laptop:justify-center w-full laptop:w-auto"
@@ -158,21 +132,26 @@
       </div>
       <div class="w-full laptop:w-44 laptop-m:w-48">
         <ElementsPublicity />
-        {{ data }}
       </div>
     </div>
   </div>
 </template>
-
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 const route = useRoute();
-const routId = ref(route.params);
-const { data, pending } =await useFetchApi(
-  `http://newspodium.sakku-khatam.ir/News/newsByKey`,
-  "GET",
-  { Id: routId.value }
-);
+const routId = ref(route.params.slug);
+const details = ref(null);
+
+fetch(`http://newspodium.sakku-khatam.ir/News/newsByKey?Id=${routId.value}`, {
+  method: "GET",
+})
+  .then((response) => response.text())
+  .then((result) => {
+    console.log(result);
+    details.value = JSON.parse(result);
+  })
+  .catch((error) => console.log("error", error));
+onMounted(async () => {});
 
 useHead({
   title: route.params.slug,

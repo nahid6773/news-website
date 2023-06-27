@@ -1,17 +1,25 @@
 <template>
   <div class="gridClass">
-    <!-- <div class="w-full">
+    <div class="w-full">
       <img
         class="w-full"
         src="https://static.tgju.org/advertisement/1200-70-1682767266.gif"
         alt=""
       />
-    </div> -->
+    </div>
+    <!-- ///// whene loading data -->
+    <div
+      class="w-full flex items-center justify-center text-primary h-24"
+      v-if="!dataCurrency"
+    >
+      <IconSpinner />
+      <span class="font-bold"> Loading... </span>
+    </div>
     <div
       class="flex items-center justify-between mt-6 flex-wrap gap-y-3"
-      v-if="info"
+      v-if="dataCurrency"
     >
-      <BaseCurrencyCard :data="data" />
+      <BaseCurrencyCard :data="dataCurrency" />
     </div>
     <div class="w-full my-3">
       <img
@@ -45,12 +53,7 @@
       <BaseTable :data="ansGold" noTitle class="w-full laptop:w-[49%]" />
       <BaseTable :data="gold" noTitle class="w-full laptop:w-[49%]" />
     </div>
-    <div
-      class="my-3 flex items-center justify-between rounded-md overflow-hidden flex-wrap laptop:no-wrap"
-    >
-      <BaseTable :data="ansGold" noTitle class="w-full laptop:w-[49%]" />
-      <BaseTable :data="gold" noTitle class="w-full laptop:w-[49%]" />
-    </div>
+   
     <div class="w-full my-3">
       <img
         class="w-full"
@@ -58,23 +61,39 @@
         alt=""
       />
     </div>
-    <!-- <div
-      class="my-3 flex items-center justify-between rounded-md overflow-hidden flex-wrap laptop:no-wrap"
-    >
-      <BaseTable :data="ansGold" noTitle class="w-full laptop:w-[49%]" />
-      <BaseTable :data="gold" noTitle class="w-full laptop:w-[49%]" />
-      {{data}}
-    </div> -->
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from "vue";
 
-const { data, pending } = useFetchApi(
-  "http://23.227.196.200:81/Currency/LastUpdateCurrency",
-  "POST"
-);
+const dataCurrency = ref(null);
+const errorCurrency = ref(null);
+
+onMounted(() => {
+  fetch("http://23.227.196.200:81/Currency/LastUpdateCurrency", {
+    method: "POST",
+    headers: {
+      Accept: "text/plain",
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      console.log(result);
+      dataCurrency.value = JSON.parse(result);
+    })
+    .catch((error) =>{ 
+      console.log("error currency", error)
+      errorCurrency.value=error
+      
+      });
+});
+
+// const { data, pending } = useFetchApi(
+//   "http://23.227.196.200:81/Currency/LastUpdateCurrency",
+//   "POST"
+// );
 
 const tolerance_high = ref({
   title: "",
