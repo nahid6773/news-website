@@ -15,10 +15,12 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      ...custom_colors,
+      // ...custom_colors,
       transparent: 'transparent',
       current: 'currentColor',
       // 'primary': '#385e9d',
+      "primary" : "var(--color-primary)",
+      "secondary" : "var(--color-secondary)",
       'warning': '#eec62a',
       'success': '#005b3d',
       'greenlight':'#1c9541',
