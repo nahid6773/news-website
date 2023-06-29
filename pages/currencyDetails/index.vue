@@ -10,13 +10,17 @@
         <!-- Row 1 -->
         <div class="flex flex-col laptop:flex-row justify-between gap-10">
           <div class="w-1/2 flex-grow bg-white rounded-md overflow-hidden">
-            <h2 class="text-gray-700 border-b-2 divide-[#e6e6e6] p-4 text-sm text-zinc-500 before:content-[''] before:bg-warning before:w-3 before:h-3 before:relative before:inline-block before:rounded-full before:top-[2px] before:mx-[2px]">
+            <h2
+              class="text-gray-700 border-b-2 divide-[#e6e6e6] p-4 text-sm text-zinc-500 before:content-[''] before:bg-warning before:w-3 before:h-3 before:relative before:inline-block before:rounded-full before:top-[2px] before:mx-[2px]"
+            >
               نوسانات دلار / پوند مصر در روز جاری
             </h2>
             <ChartLine :data="chartData" />
           </div>
-    
-          <div class="w-1/2 bg-white flex flex-col justify-between rounded-md overflow-hidden">
+
+          <div
+            class="w-1/2 bg-white flex flex-col justify-between rounded-md overflow-hidden"
+          >
             <BaseTable :data="revenue" hide_header />
           </div>
         </div>
@@ -25,7 +29,9 @@
           <div class="w-1/2 flex-grow bg-white rounded-md overflow-hidden">
             <BaseTable :data="EMA" />
           </div>
-          <div class="w-1/2 bg-white flex flex-col justify-between rounded-md overflow-hidden">
+          <div
+            class="w-1/2 bg-white flex flex-col justify-between rounded-md overflow-hidden"
+          >
             <BaseTable :data="SMA" />
           </div>
         </div>
@@ -38,39 +44,70 @@
 
 <script setup>
 const route = useRoute();
-const { getCurrencyById } = useCurrency();
+const currencyId = route.params;
 
 onMounted(async () => {
-  const {data, error} = await getCurrencyById();
-  console.log(data.value);
+  const { data, pending, error } =await useFetchApi(
+    "http://23.227.196.200:81/Currency",
+    "POST",
+    {},
+    {},
+    {
+      typeCurrency: currencyId,
+      start: 0,
+      end: 100,
+    }
+  );
 });
 
 const chartData = ref({
-      labels: [
-        '00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'
+  labels: [
+    "00:00",
+    "01:00",
+    "02:00",
+    "03:00",
+    "04:00",
+    "05:00",
+    "06:00",
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00",
+  ],
+  datasets: [
+    // Indigo line
+    {
+      label: "Current",
+      data: [
+        30940, 31000, 30960, 31420, 31000, 31560, 31420, 30940, 31000, 30960,
+        31420, 31000, 31560, 31420, 30940, 31000, 30960, 31420, 31000, 31560,
+        31420, 31000, 31560, 31420,
       ],
-      datasets: [
-        // Indigo line
-        {
-          label: 'Current',
-          data: [
-            30940, 31000, 30960, 31420, 31000, 31560, 31420,
-            30940, 31000, 30960, 31420, 31000, 31560, 31420,
-            30940, 31000, 30960, 31420, 31000, 31560, 31420,
-            31000, 31560, 31420
-          ],
-          fill: true,
-          // backgroundColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.blue[500])}, 0.08)`,
-          // borderColor: tailwindConfig().theme.colors.indigo[500],
-          borderWidth: 2,
-          tension: 0,
-          pointRadius: 0,
-          pointHoverRadius: 3,
-          // pointBackgroundColor: tailwindConfig().theme.colors.indigo[500],
-          clip: 20,
-        },
-      ],
-    })
+      fill: true,
+      // backgroundColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.blue[500])}, 0.08)`,
+      // borderColor: tailwindConfig().theme.colors.indigo[500],
+      borderWidth: 2,
+      tension: 0,
+      pointRadius: 0,
+      pointHoverRadius: 3,
+      // pointBackgroundColor: tailwindConfig().theme.colors.indigo[500],
+      clip: 20,
+    },
+  ],
+});
 
 const summary = ref({
   title: "دلار / پوند مصر در یک نگاه",
