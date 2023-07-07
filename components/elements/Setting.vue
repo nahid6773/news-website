@@ -8,9 +8,9 @@
     </div>
     <!-- sub items -->
     <div
-      class="absolute rounded-md transition-all duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16 flex p-2 hover:p-3 bg-white text-white w-[190px] select-none"
+      class="fixed rounded-md transition-all duration-[0.2s] ease-out scale-x-0 group-hover:scale-x-100 group-hover:-translate-y-16 flex p-2 hover:p-3 bg-white text-white select-none"
     >
-      <div class="py-3 text-sm">
+      <div class="py-1 text-sm">
         <div @click="changeTheme('green')"
           class="flex justify-center items-center cursor-pointer text-gray-500 hover:text-white hover:bg-secondary rounded-md px-2 py-2 my-2"
         >
@@ -60,7 +60,7 @@ let fontSize = ref();
 
 if (process.client) {
   theme = localStorage.theme ? localStorage.theme : "green";
-  fontSize = localStorage.fontSize ? localStorage.fontSize : "14";
+  fontSize = localStorage.fontSize ? +localStorage.fontSize : "14";
 }
 
 onBeforeMount(() => {
@@ -109,17 +109,17 @@ const changeTheme = (theme) => {
   );
 };
 
-const changeSize = (type) => {
+const changeSize = (type = null) => {
   if(type == 'plus') {
-    if(fontSize < 22) {
+    if(fontSize < 28) {
       fontSize += 2
     }
-  } else {
-    if(fontSize > 12) {
+  } else if(type == 'minus') {
+    if(fontSize > 14) {
       fontSize -= 2
     }
   }
-  document.documentElement.style.setProperty("--font-size", fontSize);
+  document.documentElement.style.setProperty("--font-size", `${fontSize}px`);
   localStorage.fontSize = fontSize
 }
 </script>

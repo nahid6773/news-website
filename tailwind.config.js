@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
+// const fontSize = useState('fontSize')
+// const fontSize = getItem('fontSize')
 // const fontSize = var(--font-size)
 // const fontSize_sm = `${fontSize - 2 }px`
 // const fontSize_base = `${fontSize }px`
@@ -8,6 +10,7 @@ const colors = require('tailwindcss/colors')
 
 module.exports = {
   darkMode: 'class',
+  calc: false,
   content: [
     "./components/**/*.{js,vue,ts}",
     "./layouts/**/*.vue",
@@ -50,9 +53,9 @@ module.exports = {
     fontSize: {
       xxs: ['0.675rem', { lineHeight: '.875rem' }],
       xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: "var(--font-size)-2px",
-      base: "var(--font-size)-2px",
-      lg: "var(--font-size)-2px",
+      sm: 'calc(var(--font-size) - 2px)',
+      base: 'calc(var(--font-size))',
+      lg: 'calc(var(--font-size) + 2px)',
       xl: ['1.25rem', { lineHeight: '1.75rem' }],
       '2xl': ['1.5rem', { lineHeight: '2rem' }],
       '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
@@ -77,9 +80,8 @@ module.exports = {
           '0%': { transform: 'translateX(-50%)' },
           '100%': { transform: 'translateX(110%)' },
         },
-      }
+      },
     },
   },
   plugins: [],
 }
-

@@ -4,7 +4,7 @@
       <div
         class="bg-primary top-0 bg-primary h-8 float-left relative w-[15%] before:bg-primary before:w-4 before:h-4 before:top-2 before:-right-1 before:absolute before:rotate-45"
       >
-        <h3 class="text-white font-bold relative text-center">{{ label }}</h3>
+        <div class="text-white font-bold relative text-center text-lg">{{ label }}</div>
       </div>
       <div class="w-[85%] float-right">
         <div class="relative flex overflow-x-hidden">
