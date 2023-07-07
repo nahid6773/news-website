@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
-const custom_colors = require('./style/theme.js')
 
 module.exports = {
   darkMode: 'class',
@@ -16,10 +15,8 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      // ...custom_colors,
       transparent: 'transparent',
       current: 'currentColor',
-      // 'primary': '#385e9d',
       "primary" : "var(--color-primary)",
       "secondary" : "var(--color-secondary)",
       'warning': '#eec62a',
@@ -44,6 +41,15 @@ module.exports = {
       'laptop-l': '1440px',
       '4k': '2560px',
     },
+    fontSize: {
+      xxs: ['calc(var(--font-size) - 6px)', { lineHeight: '.875rem' }],
+      xs: ['calc(var(--font-size) - 4px)', { lineHeight: '1rem' }],
+      sm: ['calc(var(--font-size) - 2px)', { lineHeight: '1.25rem' }],
+      base: ['calc(var(--font-size))', { lineHeight: '1.5rem' }],
+      lg: ['calc(var(--font-size) + 2px)', { lineHeight: '1.75rem' }],
+      xl: ['calc(var(--font-size) + 4px)', { lineHeight: '1.75rem' }],
+      '2xl': ['calc(var(--font-size) + 6px)', { lineHeight: '2rem' }],
+    },
     extend: {
       animation: {
         marquee: 'marquee 40s linear infinite',
@@ -58,11 +64,10 @@ module.exports = {
           '0%': { transform: 'translateX(-50%)' },
           '100%': { transform: 'translateX(110%)' },
         },
-      }
+      },
     },
   },
   plugins: [
     require('flowbite/plugin')
   ],
 }
-
