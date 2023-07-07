@@ -1,13 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
-// const fontSize = useState('fontSize')
-// const fontSize = getItem('fontSize')
-// const fontSize = var(--font-size)
-// const fontSize_sm = `${fontSize - 2 }px`
-// const fontSize_base = `${fontSize }px`
-// const fontSize_lg = `${fontSize + 2 }px`
-
 module.exports = {
   darkMode: 'class',
   content: [
@@ -21,10 +14,8 @@ module.exports = {
   theme: {
     colors: {
       ...colors,
-      // ...custom_colors,
       transparent: 'transparent',
       current: 'currentColor',
-      // 'primary': '#385e9d',
       "primary" : "var(--color-primary)",
       "secondary" : "var(--color-secondary)",
       'warning': '#eec62a',
@@ -50,20 +41,13 @@ module.exports = {
       '4k': '2560px',
     },
     fontSize: {
-      xxs: ['0.675rem', { lineHeight: '.875rem' }],
-      xs: ['0.75rem', { lineHeight: '1rem' }],
-      sm: 'calc(var(--font-size) - 2px)',
-      base: 'calc(var(--font-size))',
-      lg: 'calc(var(--font-size) + 2px)',
-      xl: ['1.25rem', { lineHeight: '1.75rem' }],
-      '2xl': ['1.5rem', { lineHeight: '2rem' }],
-      '3xl': ['1.875rem', { lineHeight: '2.25rem' }],
-      '4xl': ['2.25rem', { lineHeight: '2.5rem' }],
-      '5xl': ['3rem', { lineHeight: '1' }],
-      '6xl': ['3.75rem', { lineHeight: '1' }],
-      '7xl': ['4.5rem', { lineHeight: '1' }],
-      '8xl': ['6rem', { lineHeight: '1' }],
-      '9xl': ['8rem', { lineHeight: '1' }], 
+      xxs: ['calc(var(--font-size) - 6px)', { lineHeight: '.875rem' }],
+      xs: ['calc(var(--font-size) - 4px)', { lineHeight: '1rem' }],
+      sm: ['calc(var(--font-size) - 2px)', { lineHeight: '1.25rem' }],
+      base: ['calc(var(--font-size))', { lineHeight: '1.5rem' }],
+      lg: ['calc(var(--font-size) + 2px)', { lineHeight: '1.75rem' }],
+      xl: ['calc(var(--font-size) + 4px)', { lineHeight: '1.75rem' }],
+      '2xl': ['calc(var(--font-size) + 6px)', { lineHeight: '2rem' }],
     },
     extend: {
       animation: {
