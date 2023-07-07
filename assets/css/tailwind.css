@@ -11,6 +11,7 @@ body {
   @apply overflow-y-scroll;
   direction: rtl;
   font-family: "siteFont", serif !important;
+  font-size: var(--font-size);
   @apply bg-[#f1f1f1] dark:bg-[#2a2c2c] text-justify;
   @apply text-gray-600;
 }
