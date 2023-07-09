@@ -60,7 +60,7 @@ let fontSize = ref();
 
 if (process.client) {
   theme = localStorage.theme ? localStorage.theme : "green";
-  fontSize = localStorage.fontSize ? +localStorage.fontSize : "14";
+  fontSize = localStorage.fontSize ? +localStorage.fontSize : 14;
 }
 
 onBeforeMount(() => {
