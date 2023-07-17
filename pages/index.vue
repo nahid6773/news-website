@@ -15,7 +15,6 @@
         alt=""
       />
     </div>
-    {{listCurrency}}
     <div
       v-if="errorCurrency"
       class="w-full flex items-center justify-center text-primary h-24 font-bold"
@@ -2326,29 +2325,9 @@ import { ref, onMounted } from "vue";
 import { initTooltips } from "flowbite";
 const { news } = useNewsList();
 
-const listCurrency = ref(null);
 const dataCurrency = ref(null);
 const errorCurrency = ref(null);
 onMounted(() => {
-
-  /////get updatecurrency
-  fetch("http://23.227.196.200:81/Currency/LastUpdateCurrency", {
-    method: "POST",
-    headers: {
-      Accept: "text/plain",
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.text())
-    .then((result) => {
-      console.log(result);
-      dataCurrency.value = JSON.parse(result);
-    })
-    .catch((error) => {
-      console.log("error currency", error);
-      errorCurrency.value = error;
-    });
-
   // ///// get list currency
   fetch("http://23.227.196.200:81/Currency/ListCurrency", {
     method: "POST",
@@ -2358,13 +2337,45 @@ onMounted(() => {
     },
     body:JSON.stringify(
 
-      [ {
-      typeCurrency: 1,
+      [
+        {
+      typeCurrency: 80,
       start: 0,
       end: 1,
     },
     {
-      typeCurrency: 80,
+      typeCurrency: 81,
+      start: 0,
+      end: 1,
+    },
+        {
+      typeCurrency: 1,
+      start: 0,
+      end: 1,
+    },
+    
+     {
+      typeCurrency: 10,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 4,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 5,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 2,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 202,
       start: 0,
       end: 1,
     },
@@ -2379,7 +2390,8 @@ onMounted(() => {
     .then((response) => response.text())
     .then((result) => {
       console.log(result)
-      listCurrency.value=result
+      dataCurrency.value = JSON.parse(result);
+
     })
     .catch((error) => console.log("error", error));
   initTooltips();

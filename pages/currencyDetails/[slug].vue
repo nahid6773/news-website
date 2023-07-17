@@ -1,6 +1,7 @@
 <template>
   <div class="gridClass mx-auto my-3">
     <div class="flex gap-6 my-4 flex-wrap laptop:flex-nowrap">
+      {{ detailsCurrency }}
       <!-- Column 1 -->
       <div class="w-full laptop:w-1/3 flex flex-col gap-y-5">
         <BaseTable :data="summary" />
@@ -44,10 +45,11 @@
 
 <script setup>
 const route = useRoute();
-const currencyId = route.params;
+const currencyId = ref(route.params.slug);
+const detailsCurrency = ref(null);
 
 onMounted(async () => {
-  const { data, pending, error } =await useFetchApi(
+  const { data, pending, error } = await useFetchApi(
     "http://23.227.196.200:81/Currency",
     "POST",
     {},
@@ -58,6 +60,7 @@ onMounted(async () => {
       end: 100,
     }
   );
+  detailsCurrency.value = data;
 });
 
 const chartData = ref({

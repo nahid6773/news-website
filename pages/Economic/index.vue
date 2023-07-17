@@ -43,19 +43,72 @@ import { ref, onMounted } from "vue";
 
 const dataCurrency = ref(null);
 onMounted(() => {
-  fetch("http://23.227.196.200:81/Currency/LastUpdateCurrency", {
+  // ///// get list currency
+  fetch("http://23.227.196.200:81/Currency/ListCurrency", {
     method: "POST",
     headers: {
-      Accept: "text/plain",
       "Content-Type": "application/json",
+      Accept: "text/plain",
     },
+    body:JSON.stringify(
+
+      [
+        {
+      typeCurrency: 80,
+      start: 0,
+      end: 1,
+    },
+    {
+      typeCurrency: 81,
+      start: 0,
+      end: 1,
+    },
+        {
+      typeCurrency: 1,
+      start: 0,
+      end: 1,
+    },
+    
+     {
+      typeCurrency: 10,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 4,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 5,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 2,
+      start: 0,
+      end: 1,
+    },
+     {
+      typeCurrency: 202,
+      start: 0,
+      end: 1,
+    },
+    {
+      typeCurrency: 200,
+      start: 0,
+      end: 1,
+    },]
+    )
+    
   })
     .then((response) => response.text())
     .then((result) => {
-      console.log(result);
+      console.log(result)
       dataCurrency.value = JSON.parse(result);
+
     })
-    .catch((error) => console.log("error currency", error));
+    .catch((error) => console.log("error", error));
 });
 
 const lastCard = ref([
