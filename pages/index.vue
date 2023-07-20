@@ -2323,12 +2323,13 @@
 </template>
 
 <script setup>
-  const device=useDevice();
-  console.log(device.isMobile);
-  definePageMeta({
+  // const device=useDevice();
+  // const { isMobile } = useDevice();
+  // console.log(device.isMobile);
+  // definePageMeta({
   // layout:(ctx)=>ctx.device.isMobile ? 'mobile' : 'default'
-  layout:'mobile'
-  });
+  // // layout: device.isMobile ? 'mobile' : 'default'
+  // });
 import { useNewsList } from "~/composables/useNews";
 import { ref, onMounted } from "vue";
 import { initTooltips } from "flowbite";
@@ -2397,7 +2398,7 @@ onMounted(() => {
   })
     .then((response) => response.text())
     .then((result) => {
-      console.log(result);
+      // console.log(result);
       dataCurrency.value = JSON.parse(result);
     })
     .catch((error) => console.log("error", error));
