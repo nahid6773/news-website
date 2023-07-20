@@ -1,5 +1,6 @@
 <template>
   <header class="bg-primary mb-4 pt-3">
+    
     <!-- search overlay -->
     <div
       v-if="search"
