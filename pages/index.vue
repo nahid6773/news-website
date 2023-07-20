@@ -2316,17 +2316,28 @@
         <div class="tooltip-arrow" data-popper-arrow></div>
       </div>
     </div>
+    <span>count:{{ store.count }}</span>
+    <button @click="store.increment">increment</button>
+    <button @click="store.decrement">decrement</button>
   </div>
 </template>
 
 <script setup>
+  const device=useDevice();
+  console.log(device.isMobile);
+  definePageMeta({
+  // layout:(ctx)=>ctx.device.isMobile ? 'mobile' : 'default'
+  layout:'mobile'
+  });
 import { useNewsList } from "~/composables/useNews";
 import { ref, onMounted } from "vue";
 import { initTooltips } from "flowbite";
+import { useCounterStore } from "~~/store/counter";
+const store = useCounterStore();
 const { news } = useNewsList();
-
 const dataCurrency = ref(null);
 const errorCurrency = ref(null);
+
 onMounted(() => {
   // ///// get list currency
   fetch("http://23.227.196.200:81/Currency/ListCurrency", {
@@ -2335,69 +2346,63 @@ onMounted(() => {
       "Content-Type": "application/json",
       Accept: "text/plain",
     },
-    body:JSON.stringify(
+    body: JSON.stringify([
+      {
+        typeCurrency: 80,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 81,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 1,
+        start: 0,
+        end: 1,
+      },
 
-      [
-        {
-      typeCurrency: 80,
-      start: 0,
-      end: 1,
-    },
-    {
-      typeCurrency: 81,
-      start: 0,
-      end: 1,
-    },
-        {
-      typeCurrency: 1,
-      start: 0,
-      end: 1,
-    },
-    
-     {
-      typeCurrency: 10,
-      start: 0,
-      end: 1,
-    },
-     {
-      typeCurrency: 4,
-      start: 0,
-      end: 1,
-    },
-     {
-      typeCurrency: 5,
-      start: 0,
-      end: 1,
-    },
-     {
-      typeCurrency: 2,
-      start: 0,
-      end: 1,
-    },
-     {
-      typeCurrency: 202,
-      start: 0,
-      end: 1,
-    },
-    {
-      typeCurrency: 200,
-      start: 0,
-      end: 1,
-    },]
-    )
-    
+      {
+        typeCurrency: 10,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 4,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 5,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 2,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 202,
+        start: 0,
+        end: 1,
+      },
+      {
+        typeCurrency: 200,
+        start: 0,
+        end: 1,
+      },
+    ]),
   })
     .then((response) => response.text())
     .then((result) => {
-      console.log(result)
+      console.log(result);
       dataCurrency.value = JSON.parse(result);
-
     })
     .catch((error) => console.log("error", error));
   initTooltips();
 });
-
-
 
 //////// get news HeadLine
 const { data: dataNews, pending: pendingNews } = await useFetchApi(
@@ -2409,9 +2414,6 @@ const { data: dataNews, pending: pendingNews } = await useFetchApi(
     date: "2023 05 18",
   }
 );
-
-
-
 
 const images = ref([
   {
