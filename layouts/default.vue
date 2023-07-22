@@ -1,18 +1,16 @@
 <template>
   <div>
-    <MobileHeader v-if="device.isMobile" />
-    <TheHeader v-else />
+    <TheHeader />
 
     <nuxt-page></nuxt-page>
 
-    <TheFooter v-if="device.isMobile" />
-    <MobileFooter v-else />
+    <TheFooter/>
 
     <ElementsScrollToTop />
     <ElementsSetting />
   </div>
 </template>
 
-<script setup>
-const device=useDevice();
-</script>
+// <script setup>
+// const device=useDevice();
+// </script>

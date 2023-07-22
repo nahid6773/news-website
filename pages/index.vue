@@ -2323,9 +2323,8 @@
 </template>
 
 <script setup>
-  // const device=useDevice();
-  // const { isMobile } = useDevice();
-  // console.log(device.isMobile);
+  const device=useDevice();
+  console.log(device.isMobile);
   // definePageMeta({
   // layout:(ctx)=>ctx.device.isMobile ? 'mobile' : 'default'
   // // layout: device.isMobile ? 'mobile' : 'default'
